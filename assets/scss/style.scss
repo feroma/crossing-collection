@@ -4,3 +4,27 @@ img {
   max-width: 50px;
   height: auto;
 }
+.st0 {
+  stroke-miterlimit: 4;
+  stroke-width: .6px;
+}
+
+.st0, .st1, .st2 {
+  fill: none;
+}
+
+.st0, .st2 {
+  stroke: #e5e5e5;
+}
+
+.st1 {
+  stroke: #6289aa;
+}
+
+.st1, .st2 {
+  stroke-width: .6px;
+}
+
+.st3 {
+  display: none;
+}
