@@ -1,5 +1,5 @@
 <template>
-  <div v-if="isModalOpen" class="modal-overlay" @click="closeModal">
+  <div v-if="isLocationsModalOpen" class="modal-overlay" @click="closeModal">
     <div class="modal-content" @click.stop>
       <!-- Close button -->
       <button @click="closeModal" class="modal-close-btn">
@@ -36,14 +36,33 @@ export default {
   },
   computed: {
     ...mapGetters([
-      'isModalOpen',
+      'isLocationsModalOpen',
       'allLocations'
     ])
   },
   methods: {
     ...mapActions([
-      'closeModal'
-    ])
+      'closeLocationsModal'
+    ]),
+
+    closeModal() {
+      this.closeLocationsModal()
+    }
+  },
+  watch: {
+    isLocationsModalOpen(newVal) {
+      if (newVal) {
+        // Modale aperta - aggiungi classe al body
+        document.body.classList.add('modal-open')
+      } else {
+        // Modale chiusa - rimuovi classe dal body
+        document.body.classList.remove('modal-open')
+      }
+    }
+  },
+  beforeDestroy() {
+    // Cleanup: rimuovi la classe se il componente viene distrutto
+    document.body.classList.remove('modal-open')
   }
 }
 </script>

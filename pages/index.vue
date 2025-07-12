@@ -1,30 +1,17 @@
 <template>
   <div class="landing-page">
-    <!-- Header con menu hamburger -->
+    <!-- Header con bottone locations -->
     <header class="header">
       <div class="container">
         <h1 class="site-title">{{ siteConfig.siteName }}</h1>
-        <button @click="toggleModal" class="menu-toggle">
-          <span></span>
-          <span></span>
-          <span></span>
+        <button @click="openLocationsModal" class="locations-btn">
+          Locations
         </button>
       </div>
     </header>
 
-    <!-- Modal di navigazione -->
-    <nav v-if="isModalOpen" class="modal-nav" @click="closeModal">
-      <div class="modal-content" @click.stop>
-        <button @click="closeModal" class="close-btn">&times;</button>
-        <ul class="nav-list">
-          <li v-for="section in visibleSections" :key="section.id">
-            <a :href="'#' + section.id" @click="closeModal">
-              {{ section.content.title }}
-            </a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+    <!-- Modal delle locations -->
+    <LocationsModal />
 
     <!-- Contenuto principale -->
     <main>
@@ -58,40 +45,34 @@
     </footer>
   </div>
 </template>
-
+<style></style>
 <script>
 import { mapGetters, mapActions } from 'vuex'
 import ConceptSection from '~/components/ConceptSection.vue'
 import WhereaboutsSection from '~/components/WhereaboutsSection.vue'
 import ArtDesignSection from '~/components/ArtDesignSection.vue'
 import TeamSection from '~/components/TeamSection.vue'
+import LocationsModal from '~/components/LocationsModal.vue'
 
 export default {
   components: {
     ConceptSection,
     WhereaboutsSection,
     ArtDesignSection,
-    TeamSection
+    TeamSection,
+    LocationsModal
   },
 
   computed: {
     ...mapGetters([
       'siteConfig',
-      'visibleSortedSections',
-      'isModalOpen',
       'getSectionById'
-    ]),
-
-    visibleSections() {
-      return this.visibleSortedSections
-    }
+    ])
   },
 
   methods: {
     ...mapActions([
-      'openModal',
-      'closeModal',
-      'toggleModal'
+      'openLocationsModal'
     ]),
 
     getSection(id) {
@@ -99,93 +80,4 @@ export default {
     }
   }
 }
-</script>// Esempio di componente che utilizza lo store
-<template>
-  <div>
-    <!-- Header con menu hamburger -->
-    <header>
-      <h1>{{ siteConfig.siteName }}</h1>
-      <button @click="toggleModal">
-        {{ isModalOpen ? 'Chiudi' : 'Menu' }}
-      </button>
-    </header>
-
-    <!-- Modal di navigazione -->
-    <nav v-if="isModalOpen" class="modal-nav">
-      <ul>
-        <li v-for="section in visibleSections" :key="section.id">
-          <a :href="'#' + section.id" @click="closeModal">
-            {{ section.content.title }}
-          </a>
-        </li>
-      </ul>
-    </nav>
-
-    <!-- Contenuto principale -->
-    <main>
-      <p>{{ siteConfig.siteDescription }}</p>
-
-      <!-- Renderizza le sezioni visibili -->
-      <div v-for="section in visibleSections" :key="section.id">
-        <component :is="section.type + 'Section'" :data="section.content" />
-      </div>
-    </main>
-  </div>
-</template>
-
-<script>
-import { mapGetters, mapActions } from 'vuex'
-
-export default {
-  computed: {
-    ...mapGetters([
-      'siteConfig',
-      'visibleSortedSections',
-      'isModalOpen'
-    ]),
-
-    visibleSections() {
-      return this.visibleSortedSections
-    }
-  },
-
-  methods: {
-    ...mapActions([
-      'openModal',
-      'closeModal',
-      'toggleModal'
-    ])
-  }
-}
 </script>
-
-<style scoped>
-.modal-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.9);
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.modal-nav ul {
-  list-style: none;
-  padding: 0;
-  text-align: center;
-}
-
-.modal-nav li {
-  margin: 1rem 0;
-}
-
-.modal-nav a {
-  color: white;
-  text-decoration: none;
-  font-size: 1.5rem;
-}
-</style>

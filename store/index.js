@@ -27,6 +27,7 @@ export const state = () => ({
 
   // Stato dell'interfaccia utente
   modalOpen: false,
+  locationsModalOpen: false,
 
   // Array delle locations/proprietà
   locations: [
@@ -341,6 +342,15 @@ export const mutations = {
 
   TOGGLE_MODAL(state) {
     state.modalOpen = !state.modalOpen
+  },
+
+  // Mutations per il modal delle locations
+  SET_LOCATIONS_MODAL_OPEN(state, isOpen) {
+    state.locationsModalOpen = isOpen
+  },
+
+  TOGGLE_LOCATIONS_MODAL(state) {
+    state.locationsModalOpen = !state.locationsModalOpen
   }
 }
 
@@ -356,6 +366,19 @@ export const actions = {
 
   toggleModal({ commit }) {
     commit('TOGGLE_MODAL')
+  },
+
+  // Actions per il modal delle locations
+  openLocationsModal({ commit }) {
+    commit('SET_LOCATIONS_MODAL_OPEN', true)
+  },
+
+  closeLocationsModal({ commit }) {
+    commit('SET_LOCATIONS_MODAL_OPEN', false)
+  },
+
+  toggleLocationsModal({ commit }) {
+    commit('TOGGLE_LOCATIONS_MODAL')
   }
 }
 
@@ -368,6 +391,7 @@ export const getters = {
 
   // Getter per il modal
   isModalOpen: state => state.modalOpen,
+  isLocationsModalOpen: state => state.locationsModalOpen,
 
   // Getters per le locations
   allLocations: state => state.locations,
