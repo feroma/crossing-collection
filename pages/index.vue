@@ -26,6 +26,11 @@
         :data="getSection('whereabouts').content"
       />
 
+      <PropertiesSection
+        v-if="getSection('properties')"
+        :data="getSection('properties').content"
+      />
+
       <ArtDesignSection
         v-if="getSection('art-design')"
         :data="getSection('art-design').content"
@@ -45,11 +50,12 @@
     </footer>
   </div>
 </template>
-<style></style>
+
 <script>
 import { mapGetters, mapActions } from 'vuex'
 import ConceptSection from '~/components/ConceptSection.vue'
 import WhereaboutsSection from '~/components/WhereaboutsSection.vue'
+import PropertiesSection from '~/components/PropertiesSection.vue'
 import ArtDesignSection from '~/components/ArtDesignSection.vue'
 import TeamSection from '~/components/TeamSection.vue'
 import LocationsModal from '~/components/LocationsModal.vue'
@@ -58,6 +64,7 @@ export default {
   components: {
     ConceptSection,
     WhereaboutsSection,
+    PropertiesSection,
     ArtDesignSection,
     TeamSection,
     LocationsModal
@@ -80,4 +87,4 @@ export default {
     }
   }
 }
-</script>
+</script>// Esempio di componente che utilizza lo store

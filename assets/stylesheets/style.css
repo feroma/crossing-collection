@@ -5100,9 +5100,6 @@ img {
   max-width: 800px;
   margin: 0 auto; }
 
-.swiper-container {
-  overflow: visible !important; }
-
 .carousel-arrow {
   position: absolute;
   top: 50%;

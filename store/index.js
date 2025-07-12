@@ -234,11 +234,21 @@ export const state = () => ({
       }
     },
     {
+      id: 'properties',
+      name: 'Properties & Packages Section',
+      type: 'properties',
+      visible: true,
+      order: 3,
+      content: {
+        title: 'Properties & Packages'
+      }
+    },
+    {
       id: 'art-design',
       name: 'Art & Design Section',
       type: 'art-design',
       visible: true,
-      order: 3,
+      order: 4,
       content: {
         title: 'Art & Design',
         body: 'A stay at a Crossing Collection property is like visiting a friend whose taste and style give you a sense of sophistication and elegance just by being there. Timeless design pieces, modern art and family heirlooms furnish and decorate each unique room.'
@@ -249,7 +259,7 @@ export const state = () => ({
       name: 'Meet Our Team Section',
       type: 'team',
       visible: true,
-      order: 4,
+      order: 5,
       content: {
         title: 'Meet Our Team',
         staff: [
