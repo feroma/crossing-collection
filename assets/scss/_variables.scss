@@ -1,24 +1,199 @@
 // === TYPOGRAPHY ===
+/**
+--------------------------------FONTS SANS
+ */
+
+@font-face {
+  font-family: 'cc-sans';
+  src: url('../fonts/sans/CocomatPro-Italic.woff2') format('woff2'),
+  url('../fonts/sans/CocomatPro-Italic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'cc-sans';
+  src: url('../fonts/sans/CocomatPro-LightItalic.woff2') format('woff2'),
+  url('../fonts/sans/CocomatPro-LightItalic.woff') format('woff');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'cc-sans';
+  src: url('../fonts/sans/CocomatPro-Light.woff2') format('woff2'),
+  url('../fonts/sans/CocomatPro-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'cc-sans';
+  src: url('../fonts/sans/CocomatPro-Regular.woff2') format('woff2'),
+  url('../fonts/sans/CocomatPro-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'cc-sans';
+  src: url('../fonts/sans/CocomatPro-ExtraLightItalic.woff2') format('woff2'),
+  url('../fonts/sans/CocomatPro-ExtraLightItalic.woff') format('woff');
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'cc-sans';
+  src: url('../fonts/sans/CocomatPro-ExtraLight.woff2') format('woff2'),
+  url('../fonts/sans/CocomatPro-ExtraLight.woff') format('woff');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+/**
+------------serif
+ */
+//@font-face {
+//  font-family: 'cc-serif';
+//  src:  url('../fonts/serif/EthicSerif-SemiboldItalic.woff2') format('woff2'),
+//  url('../fonts/serif/EthicSerif-SemiboldItalic.woff') format('woff');
+//  font-weight: 600;
+//  font-style: italic;
+//  font-display: swap;
+//}
+//
+//@font-face {
+//  font-family: 'cc-serif';
+//  src:  url('../fonts/serif/EthicSerif-Bold.woff2') format('woff2'),
+//  url('../fonts/serif/EthicSerif-Bold.woff') format('woff');
+//  font-weight: bold;
+//  font-style: normal;
+//  font-display: swap;
+////}
+//
+//@font-face {
+//  font-family: 'cc-serif';
+//  src:  url('../fonts/serif/EthicSerif-MediumItalic.woff2') format('woff2'),
+//  url('../fonts/serif/EthicSerif-MediumItalic.woff') format('woff');
+//  font-weight: 500;
+//  font-style: italic;
+//  font-display: swap;
+//}
+//
+//@font-face {
+//  font-family: 'cc-serif';
+//  src:  url('../fonts/serif/EthicSerif-BoldItalic.woff2') format('woff2'),
+//  url('../fonts/serif/EthicSerif-BoldItalic.woff') format('woff');
+//  font-weight: bold;
+//  font-style: italic;
+//  font-display: swap;
+//}
+
+@font-face {
+  font-family: 'cc-serif';
+  src:  url('../fonts/serif/EthicSerif-Regular.woff2') format('woff2'),
+  url('../fonts/serif/EthicSerif-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+//
+//@font-face {
+//  font-family: 'cc-serif';
+//  src:  url('../fonts/serif/EthicSerif-Semibold.woff2') format('woff2'),
+//  url('../fonts/serif/EthicSerif-Semibold.woff') format('woff');
+//  font-weight: 600;
+//  font-style: normal;
+//  font-display: swap;
+//}
+//
+//@font-face {
+//  font-family: 'cc-serif';
+//  src:  url('../fonts/serif/EthicSerif-Extrabold.woff2') format('woff2'),
+//  url('../fonts/serif/EthicSerif-Extrabold.woff') format('woff');
+//  font-weight: bold;
+//  font-style: normal;
+//  font-display: swap;
+//}
+//
+//@font-face {
+//  font-family: 'cc-serif';
+//  src:  url('../fonts/serif/EthicSerif-Medium.woff2') format('woff2'),
+//  url('../fonts/serif/EthicSerif-Medium.woff') format('woff');
+//  font-weight: 500;
+//  font-style: normal;
+//  font-display: swap;
+//}
+
+@font-face {
+  font-family: 'cc-serif';
+  src:  url('../fonts/serif/EthicSerif-Light.woff2') format('woff2'),
+  url('../fonts/serif/EthicSerif-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'cc-serif';
+  src:  url('../fonts/serif/EthicSerif-Italic.woff2') format('woff2'),
+  url('../fonts/serif/EthicSerif-Italic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+//
+//@font-face {
+//  font-family: 'cc-serif';
+//  src:  url('../fonts/serif/EthicSerif-ExtraboldItalic.woff2') format('woff2'),
+//  url('../fonts/serif/EthicSerif-ExtraboldItalic.woff') format('woff');
+//  font-weight: bold;
+//  font-style: italic;
+//  font-display: swap;
+//}
+
+@font-face {
+  font-family: 'cc-serif';
+  src:  url('../fonts/serif/EthicSerif-LightItalic.woff2') format('woff2'),
+  url('../fonts/serif/EthicSerif-LightItalic.woff') format('woff');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+
+
+
 // Font families personalizzate
-$font-family-headings: 'League Spartan', sans-serif;
-$font-family-body: 'EB Garamond', serif;
+$font-family-body: 'cc-sans', sans-serif;
+$font-family-headings: 'cc-serif', serif;
 $font-family-sans-serif: $font-family-body; // Override Bootstrap default
 
-$blue:    #007bff;
-$indigo:  #6610f2;
+$blue:    #6289AA;
+$indigo:  #334B5F;
+$teal:    #161B1F;
+
 $purple:  #6f42c1;
 $pink:    #e83e8c;
 
 $orange:  #fd7e14;
-$yellow:  #ffc107;
+$yellow:  #F8F4EE;
 $green:   #28a745;
-$teal:    #20c997;
+
 $cyan:    #17a2b8;
 
 $red:     #B12C1B;
 $black:     #000000;
 $gray:     #9EA1A8;
-$gray_light   :  #DFE2EA;
+$gray_light   :  #e5e5e5;
 $gray_dark   :  #6F727B;
 $gray_darker  :  #323437;
 $white   :  #ffffff;
@@ -39,12 +214,12 @@ $colors: map-merge(
                 $colors
 );
 
-$primary:       $red;
+$primary:       $blue;
 $secondary:     $gray;
 $success:       $green;
 $info:          $cyan;
 $warning:       $yellow;
-$danger:        $purple;
+$danger:        $red;
 $light:         $gray_light;
 $dark:          $gray_darker;
 

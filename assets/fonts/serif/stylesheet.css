@@ -1,0 +1,108 @@
+@font-face {
+    font-family: 'cc-serif';
+    src:  url('../fonts/serif/EthicSerif-SemiboldItalic.woff2') format('woff2'),
+         url('../fonts/serif/EthicSerif-SemiboldItalic.woff') format('woff');
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'cc-serif';
+    src:  url('../fonts/serif/EthicSerif-Bold.woff2') format('woff2'),
+         url('../fonts/serif/EthicSerif-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'cc-serif';
+    src:  url('../fonts/serif/EthicSerif-MediumItalic.woff2') format('woff2'),
+         url('../fonts/serif/EthicSerif-MediumItalic.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'cc-serif';
+    src:  url('../fonts/serif/EthicSerif-BoldItalic.woff2') format('woff2'),
+         url('../fonts/serif/EthicSerif-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'cc-serif';
+    src:  url('../fonts/serif/EthicSerif-Regular.woff2') format('woff2'),
+         url('../fonts/serif/EthicSerif-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'cc-serif';
+    src:  url('../fonts/serif/EthicSerif-Semibold.woff2') format('woff2'),
+         url('../fonts/serif/EthicSerif-Semibold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'cc-serif';
+    src:  url('../fonts/serif/EthicSerif-Extrabold.woff2') format('woff2'),
+         url('../fonts/serif/EthicSerif-Extrabold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'cc-serif';
+    src:  url('../fonts/serif/EthicSerif-Medium.woff2') format('woff2'),
+         url('../fonts/serif/EthicSerif-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'cc-serif';
+    src:  url('../fonts/serif/EthicSerif-Light.woff2') format('woff2'),
+         url('../fonts/serif/EthicSerif-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'cc-serif';
+    src:  url('../fonts/serif/EthicSerif-Italic.woff2') format('woff2'),
+         url('../fonts/serif/EthicSerif-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'cc-serif';
+    src:  url('../fonts/serif/EthicSerif-ExtraboldItalic.woff2') format('woff2'),
+         url('../fonts/serif/EthicSerif-ExtraboldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'cc-serif';
+    src:  url('../fonts/serif/EthicSerif-LightItalic.woff2') format('woff2'),
+         url('../fonts/serif/EthicSerif-LightItalic.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+

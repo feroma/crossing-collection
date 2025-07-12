@@ -9,10 +9,9 @@
           :options="swiperOptions"
           class="team-carousel"
         >
-          <!-- noinspection HtmlUnknownTag -->
           <swiper-slide
-            v-for="(person,index) in data.staff"
-            :key="person.name+index"
+            v-for="person in data.staff"
+            :key="person.name"
             class="team-slide"
           >
             <div class="staff-member">
@@ -28,26 +27,23 @@
 
         <!-- Navigation Arrows -->
         <div class="team-carousel-prev carousel-arrow carousel-arrow-prev">
-          <svg viewBox="0 0 24 24" width="24" height="24">
-            <path fill="currentColor" d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
-          </svg>
+         <arrow-left/>
         </div>
         <div class="team-carousel-next carousel-arrow carousel-arrow-next">
-          <svg viewBox="0 0 24 24" width="24" height="24">
-            <path fill="currentColor" d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
-          </svg>
+         <arrow-right/>
         </div>
-
-        <!-- Pagination Dots -->
-        <div class="team-carousel-pagination carousel-pagination"></div>
       </div>
     </div>
   </section>
 </template>
 
 <script>
+import ArrowLeft from "~/components/ArrowLeft.vue"
+import ArrowRight from "~/components/ArrowRight.vue"
+
 export default {
   name: 'TeamSection',
+  components: {ArrowRight, ArrowLeft},
   props: {
     data: {
       type: Object,
@@ -57,17 +53,28 @@ export default {
   data() {
     return {
       swiperOptions: {
-        slidesPerView: 1,
+        slidesPerView: 'auto',
         spaceBetween: 30,
+        centeredSlides: true,
         loop: true,
         navigation: {
           nextEl: '.team-carousel-next',
           prevEl: '.team-carousel-prev',
         },
-        // pagination: {
-        //   el: '.team-carousel-pagination',
-        //   clickable: true,
-        // },
+        breakpoints: {
+          // Mobile - solo 1 slide visibile
+          320: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            centeredSlides: false,
+          },
+          // Tablet - auto width con larghezza minima
+          768: {
+            slidesPerView: 'auto',
+            spaceBetween: 30,
+            centeredSlides: true,
+          }
+        }
       }
     }
   }
