@@ -1,0 +1,90 @@
+// === TYPOGRAPHY ===
+// Font families personalizzate
+$font-family-headings: 'League Spartan', sans-serif;
+$font-family-body: 'EB Garamond', serif;
+$font-family-sans-serif: $font-family-body; // Override Bootstrap default
+
+$blue:    #007bff;
+$indigo:  #6610f2;
+$purple:  #6f42c1;
+$pink:    #e83e8c;
+
+$orange:  #fd7e14;
+$yellow:  #ffc107;
+$green:   #28a745;
+$teal:    #20c997;
+$cyan:    #17a2b8;
+
+$red:     #B12C1B;
+$black:     #000000;
+$gray:     #9EA1A8;
+$gray_light   :  #DFE2EA;
+$gray_dark   :  #6F727B;
+$gray_darker  :  #323437;
+$white   :  #ffffff;
+
+$colors: () ;
+$colors: map-merge(
+                (
+
+                        "red":        $red,
+                        "white":      $white,
+                        "black":      $black,
+                        "gray":       $gray,
+                        "gray_dark":  $gray_dark,
+                        "gray_darker":  $gray_darker,
+                        "gray_light":  $gray_light
+
+                ),
+                $colors
+);
+
+$primary:       $red;
+$secondary:     $gray;
+$success:       $green;
+$info:          $cyan;
+$warning:       $yellow;
+$danger:        $purple;
+$light:         $gray_light;
+$dark:          $gray_darker;
+
+$theme-colors: () !default;
+$theme-colors: map-merge(
+                (
+                        "primary":    $primary,
+                        "secondary":  $secondary,
+                        "success":    $success,
+                        "info":       $info,
+                        "warning":    $warning,
+                        "danger":     $danger,
+                        "light":      $light,
+                        "dark":       $dark
+                ),
+                $theme-colors
+);
+
+
+/**
+LAYOUT
+ */
+$spacer:15px;
+$grid-breakpoints: (
+        xs: 0,
+        sm: 680px,
+        md: 920px,
+        lg: 1360px,
+        xl: 1920px,
+        xxl: 2550px,
+);
+
+$container-max-widths: (
+        sm: 100%,
+        md: 100%,
+        lg: 100%,
+        xl: 100%,
+  //xxl: 1920px,
+);
+
+$grid-columns: 14;
+$grid-gutter-width: $spacer*2;
+$column-width: 100vw / $grid-columns;

@@ -18,10 +18,14 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    '~/assets/stylesheets/style.css',
+    'swiper/css/swiper.css'
   ],
+
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    { src: '~/plugins/swiper.js', mode: 'client' }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
