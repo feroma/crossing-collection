@@ -1,11 +1,6 @@
 <template>
-  <div v-if="isLocationsModalOpen" class="modal-overlay" @click="closeModal">
+  <div v-if="isLocationsModalOpen" class="modal-overlay">
     <div class="modal-content" @click.stop>
-      <!-- Close button -->
-      <button @click="closeModal" class="modal-close-btn">
-        &times;
-      </button>
-
       <!-- Modal title -->
       <div class="modal-header">
         <h2 class="modal-title">
@@ -16,7 +11,7 @@
       <!-- Locations list -->
       <div class="locations-list">
         <LocationLink
-          v-for="location in allLocations"
+          v-for="location in allLocationsList"
           :key="location.name"
           :location="location"
         />
@@ -37,7 +32,7 @@ export default {
   computed: {
     ...mapGetters([
       'isLocationsModalOpen',
-      'allLocations'
+      'allLocationsList'
     ])
   },
   methods: {

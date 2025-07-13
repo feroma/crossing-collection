@@ -1,41 +1,56 @@
-.st1 {
-  stroke: #6289aa;
-  fill: none;
-  stroke-miterlimit: 4;
-  stroke-width: 1;
-  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-// Stato iniziale - linee nella posizione normale
-#l_1 {
-  transform: translateY(0) rotate(0deg);
-}
-
-#l_2 {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-#l_3 {
-  transform: translateY(0) rotate(0deg);
-}
-
-// Stato aperto - animazione attiva
-&.is-open {
+.menu-icon {
+  cursor: pointer;
+  width: 66px;
+  height: auto;
+  background: transparent;
+  border: none;
   .st1 {
-    stroke: #e5e5e5;
+    stroke: $blue;
+    fill: none;
+    stroke-miterlimit: 4;
+    stroke-width: 1;
+    transition: all 0.4s;
   }
+  // Stato iniziale - linee nella posizione normale
   #l_1 {
-    // Sposta al centro (da y=25 a y=24, centro del viewBox 48px) e ruota -30°
-    transform: translateY(-1px) rotate(-30deg);
+    transform-origin: center;
+    transform: translateY(0) rotate(0deg);
+    transition: all 0.4s;
   }
 
   #l_2 {
-    // Sparisce
-    opacity: 0;
+    opacity: 1;
+    transform-origin: center;
+    transform: translateY(0);
+    transition: all 0.4s;
   }
 
   #l_3 {
-    // Sposta al centro (da y=15 a y=24) e ruota +30°
-    transform: translateY(9px) rotate(30deg);
+    transform-origin: center;
+    transform: translateY(0) rotate(0deg);
+    transition: all 0.4s;
+  }
+
+  // Stato aperto - animazione attiva
+  &.is-open {
+    .st1 {
+      stroke: $yellow;
+
+    }
+    #l_1 {
+      // Sposta al centro (da y=25 a y=24, centro del viewBox 48px) e ruota -30°
+      transform: translateY(-1px) rotate(-30deg);
+    }
+
+    #l_2 {
+      // Sparisce
+      opacity: 0;
+    }
+
+    #l_3 {
+      // Sposta al centro (da y=15 a y=24) e ruota +30°
+      transform: translateY(9px) rotate(30deg);
+    }
   }
 }
+

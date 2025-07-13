@@ -1,19 +1,21 @@
 <template>
   <div class="location-card">
     <div class="location-header">
-      <h3 class="location-name">{{ location.name }}</h3>
-      <span class="location-type">{{ location.description }}</span>
+      <span class="location-number serif text-italic t2">0{{(index+1)}}</span>
+      <h3 class="location-name text-uppercase mb-0 t3">{{ location.name }}</h3>
+      <span class="location-type t3">{{ location.description }}</span>
     </div>
 
     <div class="location-info">
-      <p class="location-place">{{ location.location }}</p>
+
       <a
         :href="location.website"
         target="_blank"
         rel="noopener noreferrer"
-        class="location-website"
+        class="location-website arrow-link arrow-link-alt"
       >
-        Visit Website
+        <span class="label">{{ location.location }}</span>
+        <span class="icon"><arrow-right/></span>
       </a>
     </div>
 
@@ -24,29 +26,28 @@
         :key="index"
         class="image-container"
       >
-        <picture>
-          <source
-            :srcset="image.mobile"
-            media="(max-width: 768px)"
-          >
-          <img
-            :src="image.desktop"
-            :alt="image.alt"
-            class="gallery-image"
-            loading="lazy"
-          >
-        </picture>
+        <picture-wrapper :image="image"/>
+
+
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import ArrowRight from "~/components/ArrowRight.vue"
+import PictureWrapper from "~/components/PictureWrapper.vue"
+
 export default {
   name: 'LocationGallery',
+  components: {PictureWrapper, ArrowRight},
   props: {
     location: {
       type: Object,
+      required: true
+    },
+    index: {
+      type: Number,
       required: true
     }
   }

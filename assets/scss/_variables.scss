@@ -195,7 +195,7 @@ $black:     #000000;
 $gray:     #9EA1A8;
 $gray_light   :  #e5e5e5;
 $gray_dark   :  #6F727B;
-$gray_darker  :  #323437;
+$gray_darker  :  #24252A;
 $white   :  #ffffff;
 
 $colors: () ;
@@ -257,9 +257,9 @@ $container-max-widths: (
         md: 100%,
         lg: 100%,
         xl: 100%,
-  //xxl: 1920px,
+        xxl: 1920px,
 );
 
-$grid-columns: 14;
+$grid-columns: 12;
 $grid-gutter-width: $spacer*2;
 $column-width: 100vw / $grid-columns;

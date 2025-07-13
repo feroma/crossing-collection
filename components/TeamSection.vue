@@ -10,8 +10,8 @@
           class="team-carousel"
         >
           <swiper-slide
-            v-for="person in data.staff"
-            :key="person.name"
+            v-for="(person,index) in data.staff"
+            :key="person.name+index"
             class="team-slide"
           >
             <div class="staff-member">
