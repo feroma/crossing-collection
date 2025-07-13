@@ -29,15 +29,22 @@
       </div>
     </div>
   </section>
+
+
+
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import {mapGetters} from 'vuex'
 import LocationGallery from '~/components/LocationGallery.vue'
+import LocationLink from "~/components/LocationLink.vue"
+import ArrowRight from "~/components/ArrowRight.vue"
 
 export default {
   name: 'PropertiesSection',
   components: {
+    ArrowRight,
+    LocationLink,
     LocationGallery
   },
   props: {
@@ -47,7 +54,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['allLocations'])
+    ...mapGetters(['allLocations', 'allLocationsList'])
   }
 }
 </script>

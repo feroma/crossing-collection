@@ -92,7 +92,10 @@
         v-if="getSection('properties')"
         :data="getSection('properties').content"
       />
-
+      <PropertiesSection2
+        v-if="getSection('properties')"
+        :data="getSection('properties').content"
+      />
       <ArtDesignSection
         v-if="getSection('art-design')"
         :data="getSection('art-design').content"
@@ -118,6 +121,7 @@ import {mapGetters, mapActions} from 'vuex'
 import ConceptSection from '~/components/ConceptSection.vue'
 import WhereaboutsSection from '~/components/WhereaboutsSection.vue'
 import PropertiesSection from '~/components/PropertiesSection.vue'
+import PropertiesSection2 from '~/components/PropertiesSection2.vue'
 import ArtDesignSection from '~/components/ArtDesignSection.vue'
 import TeamSection from '~/components/TeamSection.vue'
 import LocationsModal from '~/components/LocationsModal.vue'
@@ -129,7 +133,7 @@ export default {
     CollectionLogo,
     ConceptSection,
     WhereaboutsSection,
-    PropertiesSection,
+    PropertiesSection,PropertiesSection2,
     ArtDesignSection,
     TeamSection,
     LocationsModal,

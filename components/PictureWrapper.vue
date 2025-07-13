@@ -17,7 +17,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <picture>
+  <picture class="picture-wrapper">
     <source
       :srcset="image.mobile"
       media="(max-width: 768px)"
@@ -27,7 +27,7 @@ export default defineComponent({
       :alt="image.alt"
       class="gallery-image"
       loading="lazy"
-    >
+    />
   </picture>
 </template>
 

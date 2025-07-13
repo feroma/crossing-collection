@@ -1,14 +1,30 @@
 .tbase{
   font-size: 12px;
   font-weight: 500;
+  @include media-breakpoint-up(xl) {
+    font-size: 16px;
+  }
 }
 .t1{
   @include media-breakpoint-up(md) {
     font-size: 140px;
     line-height: 0.8;
   }
+  @include media-breakpoint-up(xl) {
+    font-size: 160px;
+    line-height: 0.8;
+  }
 }
-
+.t1b{
+  @include media-breakpoint-up(md) {
+    font-size: 70px;
+    line-height: 0.8;
+  }
+  @include media-breakpoint-up(xl) {
+    font-size: 80px;
+    line-height: 0.8;
+  }
+}
 .t2{
   @include media-breakpoint-up(md) {
     font-size: 50px;
@@ -19,6 +35,14 @@
   @include media-breakpoint-up(md) {
     font-size: 30px;
     line-height: 1;
+  }
+}
+
+.t4{
+  font-size: 20px;
+  @include media-breakpoint-up(md) {
+    font-size: 30px;
+    line-height: 1.2;
   }
 }
 .text-italic{

@@ -467,8 +467,8 @@ mark,
 .container-xl,
 .container-xxl {
   width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: 7.5px;
+  padding-left: 7.5px;
   margin-right: auto;
   margin-left: auto; }
 
@@ -483,15 +483,15 @@ mark,
     max-width: 100%; } }
 @media (min-width: 1920px) {
   .container, .container-sm, .container-md, .container-lg, .container-xl {
-    max-width: 100%; } }
+    max-width: 1860px; } }
 @media (min-width: 2550px) {
   .container, .container-sm, .container-md, .container-lg, .container-xl, .container-xxl {
-    max-width: 1920px; } }
+    max-width: 1860px; } }
 .row {
   display: flex;
   flex-wrap: wrap;
-  margin-right: -15px;
-  margin-left: -15px; }
+  margin-right: -7.5px;
+  margin-left: -7.5px; }
 
 .no-gutters {
   margin-right: 0;
@@ -510,8 +510,8 @@ mark,
 .col-xxl-auto {
   position: relative;
   width: 100%;
-  padding-right: 15px;
-  padding-left: 15px; }
+  padding-right: 7.5px;
+  padding-left: 7.5px; }
 
 .col {
   flex-basis: 0;
@@ -5229,13 +5229,29 @@ a.text-dark:hover, a.text-dark:focus {
   .menu-icon.is-open #l_3 {
     transform: translateY(9px) rotate(30deg); }
 
-.tbase {
+.tbase, body {
   font-size: 12px;
   font-weight: 500; }
+  @media (min-width: 1920px) {
+    .tbase, body {
+      font-size: 16px; } }
 
 @media (min-width: 920px) {
   .t1, .modal-overlay .modal-title {
     font-size: 140px;
+    line-height: 0.8; } }
+@media (min-width: 1920px) {
+  .t1, .modal-overlay .modal-title {
+    font-size: 160px;
+    line-height: 0.8; } }
+
+@media (min-width: 920px) {
+  .t1b {
+    font-size: 70px;
+    line-height: 0.8; } }
+@media (min-width: 1920px) {
+  .t1b {
+    font-size: 80px;
     line-height: 0.8; } }
 
 @media (min-width: 920px) {
@@ -5248,11 +5264,17 @@ a.text-dark:hover, a.text-dark:focus {
     font-size: 30px;
     line-height: 1; } }
 
+.t4, .arrow-link .label {
+  font-size: 20px; }
+  @media (min-width: 920px) {
+    .t4, .arrow-link .label {
+      font-size: 30px;
+      line-height: 1.2; } }
+
 .text-italic {
   font-style: italic; }
 
 body {
-  font-size: 12px;
   color: #6289AA; }
 
 h1, h2, .serif {
@@ -5338,7 +5360,6 @@ header {
     font-family: "cc-serif", serif;
     font-style: italic;
     position: relative;
-    font-size: 20px;
     z-index: 2; }
   .arrow-link .icon {
     border: solid 1px #ffffff;
@@ -5423,6 +5444,10 @@ section {
 body {
   background-color: #F8F4EE; }
 
+img {
+  max-width: 100%;
+  height: auto; }
+
 /**
 ============================================hero
  */
@@ -5487,9 +5512,15 @@ body {
 .concept-section .roundimage {
   border-radius: 250px; }
 
-.discover svg {
-  width: 100%;
-  height: auto; }
+.discover {
+  padding: 60px 0;
+  border: solid 1px #6289AA; }
+  .discover svg {
+    width: 100%;
+    height: auto; }
+  @media (min-width: 680px) {
+    .discover {
+      border: none; } }
 
 .whereabouts-section img {
   max-width: 100%;
@@ -5499,10 +5530,60 @@ body {
 /**
 -----------------location card
  */
+.location {
+  padding-top: 90px; }
+  .location img {
+    width: 100%;
+    max-width: 100%;
+    height: auto; }
+
 .location-card {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start; }
+
+.picture-wrapper {
+  display: block;
+  padding-bottom: 15px; }
+
+@media (min-width: 680px) {
+  .padding-resp {
+    padding: 60px !important; } }
+
+.border-title {
+  padding: 30px 0;
+  border-bottom: solid 1px #6289AA;
+  border-top: solid 1px #6289AA;
+  margin: 0; }
+
+.location-link-big {
+  border-bottom: solid 1px #6289AA;
+  padding: 30px 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  transition: all 0.4s; }
+  .location-link-big .icon {
+    border-color: #6289AA; }
+  .location-link-big .location-title {
+    margin-bottom: 15px; }
+  .location-link-big:hover {
+    text-decoration: none;
+    color: #161B1F; }
+  @media (min-width: 680px) {
+    .location-link-big {
+      flex-direction: row;
+      padding: 60px 0; }
+      .location-link-big .location-title {
+        margin-bottom: 0;
+        order: 2; }
+      .location-link-big .location-link {
+        order: 3; }
+      .location-link-big.link1, .location-link-big.link3, .location-link-big.link5 {
+        justify-content: flex-end; }
+        .location-link-big.link1 .location-link, .location-link-big.link3 .location-link, .location-link-big.link5 .location-link {
+          order: 1;
+          margin-right: 30px; } }
 
 /*# sourceMappingURL=style.css.map */

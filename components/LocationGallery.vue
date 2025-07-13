@@ -1,46 +1,55 @@
 <template>
-  <div class="location-card">
-    <div class="location-header">
-      <span class="location-number serif text-italic t2">0{{(index+1)}}</span>
-      <h3 class="location-name text-uppercase mb-0 t3">{{ location.name }}</h3>
-      <span class="location-type t3">{{ location.description }}</span>
-    </div>
-
-    <div class="location-info">
-
-      <a
-        :href="location.website"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="location-website arrow-link arrow-link-alt"
-      >
-        <span class="label">{{ location.location }}</span>
-        <span class="icon"><arrow-right/></span>
-      </a>
-    </div>
-
-    <!-- Image Gallery -->
-    <div class="image-gallery">
-      <div
-        v-for="(image, index) in location.gallery"
-        :key="index"
-        class="image-container"
-      >
-        <picture-wrapper :image="image"/>
 
 
+  <div class="location">
+<!--    <h1>{{location.gallery.length}}</h1>-->
+
+    <div class="row" v-if="location.gallery.length<=4">
+      <div class="col-sm-6">
+        <location-card class="padding-resp" :index="index" :location="location"/>
+
+        <picture-wrapper :image="location.gallery[1]"/>
+        <picture-wrapper class="padding-resp"  :image="location.gallery[3]"/>
+      </div>
+      <div class="col-sm-6">
+        <picture-wrapper :image="location.gallery[0]"/>
+        <picture-wrapper :image="location.gallery[2]"/>
       </div>
     </div>
+
+    <div class="row" v-else>
+      <div class="col-sm-12">
+        <location-card class="padding-resp" :index="index" :location="location"/>
+      </div>
+      <div class="col-sm-10 offset-sm-2 text-right">
+        <picture-wrapper :image="location.gallery[0]"/>
+      </div>
+      <div class="col-sm-6">
+
+        <picture-wrapper class="padding-resp"  :image="location.gallery[1]"/>
+        <picture-wrapper :image="location.gallery[3]"/>
+      </div>
+      <div class="col-sm-6">
+        <picture-wrapper :image="location.gallery[2]"/>
+        <picture-wrapper  class="padding-resp" :image="location.gallery[4]"/>
+      </div>
+    </div>
+
   </div>
+
+
+
+
 </template>
 
 <script>
 import ArrowRight from "~/components/ArrowRight.vue"
 import PictureWrapper from "~/components/PictureWrapper.vue"
+import LocationCard from "~/components/LocationCard.vue"
 
 export default {
   name: 'LocationGallery',
-  components: {PictureWrapper, ArrowRight},
+  components: {LocationCard, PictureWrapper, ArrowRight},
   props: {
     location: {
       type: Object,

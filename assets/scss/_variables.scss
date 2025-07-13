@@ -256,10 +256,10 @@ $container-max-widths: (
         sm: 100%,
         md: 100%,
         lg: 100%,
-        xl: 100%,
-        xxl: 1920px,
+        xl: 1860px,
+        xxl: 1860px,
 );
 
 $grid-columns: 12;
-$grid-gutter-width: $spacer*2;
+$grid-gutter-width: $spacer;
 $column-width: 100vw / $grid-columns;

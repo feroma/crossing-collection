@@ -78,22 +78,22 @@ export const state = () => ({
         {
           desktop: 'https://picsum.photos/698/490?random=5',
           mobile: 'https://picsum.photos/322/498?random=5',
-          alt: 'Crossing Manzoni - Interior view'
+          alt: 'Crossing Condotti - Entrance'
         },
         {
           desktop: 'https://picsum.photos/698/685?random=6',
           mobile: 'https://picsum.photos/322/498?random=6',
-          alt: 'Crossing Manzoni - Bedroom'
+          alt: 'Crossing Condotti - Suite'
         },
         {
           desktop: 'https://picsum.photos/698/927?random=7',
           mobile: 'https://picsum.photos/322/498?random=7',
-          alt: 'Crossing Manzoni - Living area'
+          alt: 'Crossing Condotti - Terrace'
         },
         {
           desktop: 'https://picsum.photos/579/384?random=8',
           mobile: 'https://picsum.photos/322/498?random=8',
-          alt: 'Crossing Manzoni - Living area'
+          alt: 'Crossing Condotti - Lounge'
         },
       ]
     },
@@ -111,22 +111,22 @@ export const state = () => ({
         {
           desktop: 'https://picsum.photos/698/490?random=9',
           mobile: 'https://picsum.photos/322/498?random=9',
-          alt: 'Crossing Manzoni - Interior view'
+          alt: 'Crossing Corso - Interior view'
         },
         {
           desktop: 'https://picsum.photos/698/685?random=10',
           mobile: 'https://picsum.photos/322/498?random=10',
-          alt: 'Crossing Manzoni - Bedroom'
+          alt: 'Crossing Corso - Living room'
         },
         {
           desktop: 'https://picsum.photos/698/927?random=11',
           mobile: 'https://picsum.photos/322/498?random=11',
-          alt: 'Crossing Manzoni - Living area'
+          alt: 'Crossing Corso - Kitchen'
         },
         {
           desktop: 'https://picsum.photos/579/384?random=12',
           mobile: 'https://picsum.photos/322/498?random=12',
-          alt: 'Crossing Manzoni - Living area'
+          alt: 'Crossing Corso - Bedroom'
         },
       ]
     },
@@ -144,28 +144,29 @@ export const state = () => ({
         {
           desktop: 'https://picsum.photos/1055/693?random=13',
           mobile: 'https://picsum.photos/322/498?random=13',
-          alt: 'Crossing Manzoni - Interior view'
+          alt: 'Crossing The Rock  - Interior view'
         },
         {
           desktop: 'https://picsum.photos/579/407?random=14',
           mobile: 'https://picsum.photos/322/498?random=14',
-          alt: 'Crossing Manzoni - Bedroom'
+          alt: 'Crossing The Rock - Villa exterior'
         },
         {
           desktop: 'https://picsum.photos/698/490?random=15',
           mobile: 'https://picsum.photos/322/498?random=15',
-          alt: 'Crossing Manzoni - Living area'
+          alt: 'Crossing The Rock - Pool area'
         },
         {
           desktop: 'https://picsum.photos/698/490?random=16',
           mobile: 'https://picsum.photos/322/498?random=16',
-          alt: 'Crossing Manzoni - Living area'
+          alt: 'Crossing The Rock - Sea view'
         },
         {
           desktop: 'https://picsum.photos/579/407?random=17',
           mobile: 'https://picsum.photos/322/498?random=17',
-          alt: 'Crossing Manzoni - Living area'
+          alt: 'Crossing The Rock - Master bedroom'
         },
+
       ]
     },
     {
@@ -180,46 +181,37 @@ export const state = () => ({
       },
       gallery: [
         {
-          desktop: 'https://picsum.photos/1055/693?random=13',
-          mobile: 'https://picsum.photos/322/498?random=13',
-          alt: 'Crossing Manzoni - Interior view'
+          desktop: 'https://picsum.photos/1055/693?random=20',
+          mobile: 'https://picsum.photos/322/498?random=20',
+          alt: 'Crossing The Sea - Interior view'
         },
         {
-          desktop: 'https://picsum.photos/579/407?random=14',
-          mobile: 'https://picsum.photos/322/498?random=14',
-          alt: 'Crossing Manzoni - Bedroom'
+          desktop: 'https://picsum.photos/579/407?random=21',
+          mobile: 'https://picsum.photos/322/498?random=21',
+          alt: 'Crossing The Sea - Villa exterior'
         },
         {
-          desktop: 'https://picsum.photos/698/490?random=15',
-          mobile: 'https://picsum.photos/322/498?random=15',
-          alt: 'Crossing Manzoni - Living area'
+          desktop: 'https://picsum.photos/698/490?random=22',
+          mobile: 'https://picsum.photos/322/498?random=22',
+          alt: 'Crossing The Sea - Pool area'
         },
         {
-          desktop: 'https://picsum.photos/698/490?random=16',
-          mobile: 'https://picsum.photos/322/498?random=16',
-          alt: 'Crossing Manzoni - Living area'
+          desktop: 'https://picsum.photos/698/490?random=23',
+          mobile: 'https://picsum.photos/322/498?random=23',
+          alt: 'Crossing The Sea - Sea view'
         },
         {
-          desktop: 'https://picsum.photos/579/407?random=17',
-          mobile: 'https://picsum.photos/322/498?random=17',
-          alt: 'Crossing Manzoni - Living area'
+          desktop: 'https://picsum.photos/579/407?random=24',
+          mobile: 'https://picsum.photos/322/498?random=24',
+          alt: 'Crossing The Sea - Master bedroom'
         },
+
       ]
     }
   ],
 
   // Array delle locations per listing (senza gallery, senza Crossing Corso)
   locationsList: [
-    {
-      name: 'Crossing Manzoni',
-      location: 'Milan',
-      website: 'https://www.crossingmanzoni.it',
-      mainImage: {
-        desktop: 'https://picsum.photos/800/600?random=1',
-        mobile: 'https://picsum.photos/322/498?random=1',
-        alt: 'Crossing Manzoni - Main view'
-      }
-    },
     {
       name: 'Crossing Condotti & Corso',
       location: 'Rome',
@@ -230,6 +222,17 @@ export const state = () => ({
         alt: 'Crossing Condotti & Corso - Main view'
       }
     },
+    {
+      name: 'Crossing Manzoni',
+      location: 'Milan',
+      website: 'https://www.crossingmanzoni.it',
+      mainImage: {
+        desktop: 'https://picsum.photos/800/600?random=1',
+        mobile: 'https://picsum.photos/322/498?random=1',
+        alt: 'Crossing Manzoni - Main view'
+      }
+    },
+
     {
       name: 'Crossing The Rock',
       location: 'Sicily',
@@ -262,7 +265,7 @@ export const state = () => ({
       order: 1,
       content: {
         title: 'Concept',
-        summary: 'A stay with Crossing is all about relaxing into the <em>comfort of elegance</em>, <em>design</em> and <em>assiduous concierge service</em> to elevate each day. Let us sweep you off your feet with Italian lifestyle and hospitality. <br><em>Buona vacanza</em>!',
+        summary: 'A stay with Crossing is all about relaxing into the <em>comfort of elegance</em>, <em>design</em> and <em>assiduous concierge service</em> to elevate each day. Let us sweep you off your feet with Italian lifestyle and hospitality. <em>Buona vacanza</em>!',
         body: 'Crossing Collection is an Italian boutique property group with a splash of mediterranean yachting for good measure.<br><br>Simply put, we own and operate two boutique accommodations in Milan and Rome, a luxury villa in Sicily and a premium yachting holiday experience with routes in Greece and Italy.<br><br>Our enterprise is the result of a lifetime passion for iconic design and contemporary art, a surplus of heirloom furniture pieces - that seemed a shame to leave in storage - and an eternal wanderlust fuelling a curiosity and passion to meet and host cosmopolitan travellers from all over the world.'
       }
     },
