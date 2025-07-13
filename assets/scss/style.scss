@@ -238,7 +238,11 @@ body.modal-open {
  */
 section {
   min-height: 100vh;
+  //max-height: 768px;
   @extend .header-padding;
+}
+.no-min-h{
+  min-height: auto;
 }
 
 body {
@@ -257,6 +261,8 @@ img {
   display: flex;
   flex-direction: column;
   height: 100vh;
+  min-height: auto;
+  max-height: 768px;
   position: relative;
   padding-bottom: 15px;
 
@@ -270,8 +276,7 @@ img {
 
   picture {
     position: relative;
-    left: 0;
-    top: 0;
+
     width: 100%;
     height: 100%;
     display: block;
@@ -327,10 +332,11 @@ img {
 ---details
  */
 .concept-section {
-  img {
-    max-width: 100%;
-    height: auto;
-  }
+  //img {
+  //  max-width: 300px;
+  //  height: auto;
+  //
+  //}
 
   .roundimage {
     border-radius: 250px;

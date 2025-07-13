@@ -1,5 +1,5 @@
 <template>
-  <section id="whereabouts" class="whereabouts-section">
+  <section id="whereabouts" class="whereabouts-section no-min-h">
     <div class="container">
       <div class="row align-items-center">
 

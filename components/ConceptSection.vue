@@ -1,13 +1,13 @@
 <template>
-  <section id="concept" class="concept-section">
+  <section id="concept" class="concept-section no-min-h">
     <div class="container">
       <div class="row align-items-center">
 
-        <div class="col-md-3 offset-md-2 pr-md-5">
+        <div class="col-md-3 offset-md-2 pr-md-5 text-right">
 
           <picture>
             <img
-              src="https://picsum.photos/440/1000?random=1"
+              src="https://picsum.photos/286/440?random=1"
               class="roundimage"
               loading="lazy"
             />

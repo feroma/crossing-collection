@@ -483,10 +483,10 @@ mark,
     max-width: 100%; } }
 @media (min-width: 1920px) {
   .container, .container-sm, .container-md, .container-lg, .container-xl {
-    max-width: 1860px; } }
+    max-width: 1440px; } }
 @media (min-width: 2550px) {
   .container, .container-sm, .container-md, .container-lg, .container-xl, .container-xxl {
-    max-width: 1860px; } }
+    max-width: 1440px; } }
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -5441,6 +5441,9 @@ body.modal-open {
 section {
   min-height: 100vh; }
 
+.no-min-h {
+  min-height: auto; }
+
 body {
   background-color: #F8F4EE; }
 
@@ -5455,6 +5458,8 @@ img {
   display: flex;
   flex-direction: column;
   height: 100vh;
+  min-height: auto;
+  max-height: 768px;
   position: relative;
   padding-bottom: 15px; }
   .welcome-section .container {
@@ -5463,8 +5468,6 @@ img {
     overflow: hidden; }
   .welcome-section picture {
     position: relative;
-    left: 0;
-    top: 0;
     width: 100%;
     height: 100%;
     display: block; }
@@ -5506,9 +5509,6 @@ img {
 /**
 ---details
  */
-.concept-section img {
-  max-width: 100%;
-  height: auto; }
 .concept-section .roundimage {
   border-radius: 250px; }
 
