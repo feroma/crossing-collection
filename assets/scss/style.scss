@@ -5,18 +5,13 @@ body {
   color: $blue;
 }
 
-h1, h2, .serif {
-  font-family: $font-family-headings;
-  font-weight: 300;
-}
+
 
 h1, h2, h3 {
   margin-bottom: 30px;
 }
 
-.sans {
-  font-family: $font-family-base;
-}
+
 
 /**
 ============================================HEADER
@@ -356,6 +351,16 @@ img {
   }
 }
 
+.art{
+  svg {
+    width: 100%;
+    height: auto;
+    path{
+      fill:$indigo;
+    }
+  }
+}
+
 .whereabouts-section {
   img {
     max-width: 100%;
@@ -447,4 +452,23 @@ img {
   }
 
 
+}
+.art-design-section{
+  padding-top: 180px;
+
+  .art{
+   transform: translateY(-120px);
+    position: relative;
+    h2{
+      display: none;
+    }
+  }
+  .container{
+    border-top-left-radius: 90px;
+    border-top-right-radius: 90px;
+    padding-bottom: 180px;
+  }
+  .icon {
+    border-color: $blue;
+  }
 }

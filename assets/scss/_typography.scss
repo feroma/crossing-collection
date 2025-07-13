@@ -48,3 +48,14 @@
 .text-italic{
   font-style: italic;
 }
+h1, h2 {
+   font-family: $font-family-headings;
+   font-weight: 300;
+}
+.serif {
+  font-family: $font-family-headings!important;
+  font-weight: 300;
+}
+.sans {
+  font-family: $font-family-base!important;
+}
