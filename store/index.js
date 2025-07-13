@@ -298,7 +298,29 @@ export const state = () => ({
       order: 4,
       content: {
         title: 'Art & Design',
-        body: 'A stay at a Crossing Collection property is like visiting a friend whose taste and style give you a sense of sophistication and elegance just by being there. Timeless design pieces, modern art and family heirlooms furnish and decorate each unique room.'
+        body: 'A stay at a Crossing Collection property is like visiting a friend whose taste and style give you a sense of sophistication and elegance just by being there. Timeless design pieces, modern art and family heirlooms furnish and decorate each unique room.',
+        gallery: [
+          {
+            desktop: 'https://picsum.photos/460/618?random=801',
+            mobile: 'https://picsum.photos/322/498?random=801',
+            alt: 'Art & Design - Contemporary artwork'
+          },
+          {
+            desktop: 'https://picsum.photos/320/618?random=802',
+            mobile: 'https://picsum.photos/322/498?random=802',
+            alt: 'Art & Design - Designer furniture'
+          },
+          {
+            desktop: 'https://picsum.photos/520/618?random=803',
+            mobile: 'https://picsum.photos/322/498?random=803',
+            alt: 'Art & Design - Interior details'
+          },
+          {
+            desktop: 'https://picsum.photos/460/618?random=804',
+            mobile: 'https://picsum.photos/322/498?random=804',
+            alt: 'Art & Design - Family heirlooms'
+          }
+        ]
       }
     },
     {

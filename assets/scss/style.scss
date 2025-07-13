@@ -471,4 +471,31 @@ img {
   .icon {
     border-color: $blue;
   }
+
+  .swiper-pagination-bullet{
+    background-color: $yellow;
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+
+    &.active{
+      background-color: $blue;
+    }
+  }
+}
+
+.art-carousel{
+  picture{
+    display: inline;
+
+    img{
+      padding-bottom: 15px;
+      height: 600px;
+      width: auto;
+    }
+  }
+  .swiper-slide{
+    width: auto;
+  }
+
 }

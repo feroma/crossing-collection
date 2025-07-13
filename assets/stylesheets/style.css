@@ -5609,5 +5609,21 @@ img {
     padding-bottom: 180px; }
   .art-design-section .icon {
     border-color: #6289AA; }
+  .art-design-section .swiper-pagination-bullet {
+    background-color: #F8F4EE;
+    width: 16px;
+    height: 16px;
+    margin-right: 5px; }
+    .art-design-section .swiper-pagination-bullet.active {
+      background-color: #6289AA; }
+
+.art-carousel picture {
+  display: inline; }
+  .art-carousel picture img {
+    padding-bottom: 15px;
+    height: 600px;
+    width: auto; }
+.art-carousel .swiper-slide {
+  width: auto; }
 
 /*# sourceMappingURL=style.css.map */
