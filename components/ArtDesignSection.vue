@@ -17,7 +17,23 @@
             </span>
           </p>
         </div>
-        <div class="col-sm-9">
+
+        <div class="d-sm-none">
+          <div class="scroll-gallery">
+            <div class="content">
+              <div
+                v-for="(item,index) in data.gallery"
+                :key="'art-gallery-sm-'+index"
+                class="art-slide-sm"
+              >
+                <picture-wrapper class="mb-3" :image="item"/>
+                <p>{{ item.alt }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-9 d-none d-sm-block">
           <swiper :options="swiperOptions"
                   ref="artSwiper"
                   class="art-carousel">
@@ -33,6 +49,11 @@
           <!-- Pagination Dots -->
           <div class="art-carousel-pagination carousel-pagination"></div>
         </div>
+
+
+
+
+
       </div>
 
     </div>

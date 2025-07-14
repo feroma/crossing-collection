@@ -313,7 +313,7 @@ export const state = () => ({
       website: 'https://www.crossingcondotti.it',
       mainImage: {
         desktop: 'https://picsum.photos/800/600?random=5',
-        mobile: 'https://picsum.photos/322/498?random=5',
+        mobile: 'https://picsum.photos/400/300?random=5',
         alt: 'Crossing Condotti & Corso - Main view'
       }
     },
@@ -323,7 +323,7 @@ export const state = () => ({
       website: 'https://www.crossingmanzoni.it',
       mainImage: {
         desktop: 'https://picsum.photos/800/600?random=1',
-        mobile: 'https://picsum.photos/322/498?random=1',
+        mobile: 'https://picsum.photos/400/300?random=1',
         alt: 'Crossing Manzoni - Main view'
       }
     },
@@ -334,7 +334,7 @@ export const state = () => ({
       website: 'https://www.crossingtherock.com',
       mainImage: {
         desktop: 'https://picsum.photos/800/600?random=14',
-        mobile: 'https://picsum.photos/322/498?random=14',
+        mobile: 'https://picsum.photos/400/300?random=14',
         alt: 'Crossing The Rock - Main view'
       }
     },
@@ -344,7 +344,7 @@ export const state = () => ({
       website: 'https://www.crossing-the-sea.com',
       mainImage: {
         desktop: 'https://picsum.photos/800/600?random=19',
-        mobile: 'https://picsum.photos/322/498?random=19',
+        mobile: 'https://picsum.photos/400/300?random=19',
         alt: 'Crossing The Sea - Main view'
       }
     }

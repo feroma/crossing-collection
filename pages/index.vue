@@ -6,12 +6,12 @@
 
         <div class="main-menu">
           <div class="header-nav justify-content-end">
-          <a
-            href="#concept"
-            @click="scrollToSection('concept', $event)"
-            class="nav-link">
-            Concept
-          </a>
+            <a
+              href="#concept"
+              @click="scrollToSection('concept', $event)"
+              class="nav-link">
+              Concept
+            </a>
             <a
               href="#properties"
               @click="scrollToSection('properties', $event)"
@@ -20,7 +20,7 @@
             </a>
           </div>
 
-          <h1 class="site-title"  @click="scrollToSection('welcome', $event)">
+          <h1 class="site-title" @click="scrollToSection('welcome', $event)">
             <collection-logo/>
             <span>{{ siteConfig.siteName }}</span>
           </h1>
@@ -29,7 +29,7 @@
               href="#art-design"
               @click="scrollToSection('art-design', $event)"
               class="nav-link">
-             Art & Design
+              Art & Design
             </a>
             <a
               href="#partners"
@@ -72,7 +72,7 @@
 
 
           <h2 class="section-title t1 text-yellow">
-            <em>Welcome to</em>&nbsp;Crossing
+            <span><em>Welcome to</em>&nbsp;Crossing</span>
           </h2>
         </div>
       </section>
@@ -113,9 +113,9 @@
     <footer class="footer bg-teal text-gray_light">
       <div class="container">
         <div class="row">
-          <div class="col-6 pt-3"></div>
-          <div class="col-6 pt-3"></div>
-          <div class="col-6 p-5">
+          <div class="col-sm-6 pt-sm-3"></div>
+          <div class="col-sm-6 pt-sm-3"></div>
+          <div class="col-sm-6 p-3 p-sm-5">
             <p class="text-gray text-uppercase">Navigate</p>
             <div class="footer-nav">
               <a
@@ -144,18 +144,18 @@
               </a>
             </div>
           </div>
-          <div class="col-6 p-5 d-flex flex-column justify-content-between">
+          <div class="col-sm-6 p-3 p-sm-5 d-flex flex-column justify-content-between">
 
             <div class="locations-list-footer">
               <p class="text-gray text-uppercase">Discover</p>
               <a
                 class="d-block text-white py-3"
-                 v-for="(location,index) in allLocationsList"
-                 :key="'link-'+location.name"
-                 :class="'link'+index"
-                 :href="location.website"
-                 target="_blank"
-                 rel="noopener noreferrer"
+                v-for="(location,index) in allLocationsList"
+                :key="'link-'+location.name"
+                :class="'link'+index"
+                :href="location.website"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <span class="location-name">{{ location.name }} &nbsp;</span>
                 &nbsp;-&nbsp;
@@ -166,17 +166,16 @@
 
             <p class="text-gray">All rights reserved. &copy; 2025 {{ siteConfig.siteName }}.</p>
           </div>
-          <div class="col-6 pt-3"></div>
-          <div class="col-6 pt-3"></div>
+          <div class="col-sm-6 pt-sm-3"></div>
+          <div class="col-sm-6 pt-sm-3"></div>
         </div>
-
-
       </div>
-      <div class="footer-logo bg-teal py-5 d-flex flex-wrap justify-content-between">
-        <div class="container">
-          <element-crossing class="mr-1"/>
-          <element-collection class="ml-auto"/>
-        </div>
+
+      <div class="container p-0">
+          <div class="footer-logo p-3 p-sm-5 d-flex flex-wrap justify-content-between">
+            <element-crossing class="mr-1"/>
+            <element-collection class="ml-auto"/>
+          </div>
       </div>
     </footer>
 
@@ -208,7 +207,7 @@ export default {
     CollectionLogo,
     ConceptSection,
     WhereaboutsSection,
-    PropertiesSection,PropertiesSection2,
+    PropertiesSection, PropertiesSection2,
     ArtDesignSection,
     TeamSection,
     LocationsModal,
@@ -219,7 +218,7 @@ export default {
     ...mapGetters([
       'siteConfig',
       'getSectionById',
-      'isLocationsModalOpen','allLocationsList'
+      'isLocationsModalOpen', 'allLocationsList'
     ])
   },
 
@@ -230,7 +229,7 @@ export default {
     ]),
 
 
-    scrollToSection(sectionId, event) {
+    scrollToSection (sectionId, event) {
       // Previeni il comportamento default del link
       event.preventDefault()
 
@@ -239,7 +238,7 @@ export default {
 
       if (targetElement) {
         // Calcola l'offset per l'header fisso (se presente)
-       // const headerHeight = document.querySelector('.header')?.offsetHeight || 0
+        // const headerHeight = document.querySelector('.header')?.offsetHeight || 0
         const elementPosition = targetElement.offsetTop // 20px di padding extra
 
         // Scroll smooth

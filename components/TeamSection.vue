@@ -1,7 +1,7 @@
 <template>
   <section id="team" class="team-section">
     <div class="container bg-yellow">
-      <h2 class=" text-center section-title t1b" v-html="data.title"></h2>
+      <h2 class="text-center section-title t1b" v-html="data.title"></h2>
 
       <!-- Team Carousel -->
       <div class="team-carousel-container">
@@ -17,17 +17,12 @@
 
 
             <div class="staff-member">
-
               <p class="staff-description t5">{{ person.description }}</p>
-
               <div class="staff-header">
                 <h3 class="staff-name serif text-italic mb-0">{{ person.name }}</h3>
                 <p class="staff-role">{{ person.role }}</p>
               </div>
-
-
             </div>
-
 
           </swiper-slide>
         </swiper>
@@ -77,8 +72,8 @@ export default {
           // Mobile - solo 1 slide visibile
           320: {
             slidesPerView: 1,
-            spaceBetween: 20,
-            centeredSlides: false,
+            spaceBetween: 15,
+            centeredSlides: true,
           },
           // Tablet - auto width con larghezza minima
           768: {

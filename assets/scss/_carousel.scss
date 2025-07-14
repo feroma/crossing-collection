@@ -3,27 +3,29 @@
 $slide_width_md: 40vw;
 
 .team-carousel {
+  @include media-breakpoint-up(sm) {
+    &:before{
+      content: '';
+      position: absolute;
+      left: -1px;
+      top: 0;
+      width: 60px;
+      height: 100%;
+      z-index: 50;
+      background: linear-gradient(90deg, rgba($yellow, 1) 1%, rgba($yellow, 0) 100%);
+    }
+    &:after{
+      content: '';
+      position: absolute;
+      right: -1px;
+      top: 0;
+      width: 60px;
+      height: 100%;
+      z-index: 50;
+      background: linear-gradient(-90deg, rgba($yellow, 1) 1%, rgba($yellow, 0) 100%);
+    }
+  }
 
-  &:before{
-    content: '';
-    position: absolute;
-    left: -1px;
-    top: 0;
-    width: 60px;
-    height: 100%;
-    z-index: 50;
-    background: linear-gradient(90deg, rgba($yellow, 1) 1%, rgba($yellow, 0) 100%);
-  }
-  &:after{
-    content: '';
-    position: absolute;
-    right: -1px;
-    top: 0;
-    width: 60px;
-    height: 100%;
-    z-index: 50;
-    background: linear-gradient(-90deg, rgba($yellow, 1) 1%, rgba($yellow, 0) 100%);
-  }
 
   .swiper-wrapper{
     align-items: center;
@@ -32,8 +34,8 @@ $slide_width_md: 40vw;
     opacity: 0.5;
     transition: opacity 0.3s ease, transform 0.3s ease;
     //transform: scale(0.9);
-    width: 100%; // Default mobile
-    height: 100%;
+    width: 90%; // Default mobile
+    height: 90%;
     min-width: auto;
 
     display: flex;
@@ -45,17 +47,6 @@ $slide_width_md: 40vw;
       min-width: $slide_width_md;
     }
 
-    //// Desktop e up
-    //@include media-breakpoint-up(lg) {
-    //  width: 350px;
-    //  min-width: 350px;
-    //}
-    //
-    //// Large desktop
-    //@include media-breakpoint-up(xl) {
-    //  width: 380px;
-    //  min-width: 380px;
-    //}
 
     &.swiper-slide-active {
       opacity: 1;
@@ -90,7 +81,6 @@ $slide_width_md: 40vw;
   cursor: pointer;
   transition: all 0.3s ease;
 
-
   .icon {
     border-color: $teal !important;
     opacity: 1 !important;
@@ -101,37 +91,21 @@ $slide_width_md: 40vw;
   }
 
 
-  &:hover {
 
-
-  }
-
-  &:focus {
-
-
-  }
-
-  svg {
-
-
-  }
 
   &-prev {
-    left: 50%;
-
-    @include media-breakpoint-up(md) {
+    left: 5px;
+    @include media-breakpoint-up(sm) {
+      left: 50%;
       transform: translateX( calc(-20vw - 60%) ) translateY(-50%);
     }
-
-
   }
-
   &-next {
-    left: 50%;
-    @include media-breakpoint-up(md) {
-      transform: translateX( calc(20vw - 20%)) translateY(-50%);
+    right: -5px;
+    @include media-breakpoint-up(sm) {
+      right: 50%;
+      transform: translateX( calc(20vw + 80%)) translateY(-50%);
     }
-
   }
 }
 
@@ -142,39 +116,12 @@ $slide_width_md: 40vw;
   border-radius: 37px;
   height: 100%;
   border: solid 1px $blue;
-  padding: 60px;
+  padding: 30px 60px;
+  @include media-breakpoint-up(sm) {
+    padding: 60px;
+  }
   transition: transform 0.3s ease;
 
 
-  .staff-header {
-
-
-  }
-
-  .staff-name {
-
-
-  }
-
-  .staff-role {
-
-
-  }
-
-  .staff-description {
-
-  }
 }
 
-// Effetto sulla slide attiva
-.team-slide.swiper-slide-active .staff-member {
-
-
-  @include media-breakpoint-up(md) {
-
-  }
-
-  @include media-breakpoint-up(lg) {
-
-  }
-}

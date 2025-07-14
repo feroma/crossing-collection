@@ -7,7 +7,7 @@
         <div class="col-md-6 order-md-2">
           <picture>
             <source
-              srcset="https://www.stage72.info/crossing-collection/repo/italy.jpg"
+              srcset="https://www.stage72.info/crossing-collection/repo/italy_sm.jpg"
               media="(max-width: 768px)"
             >
             <img

@@ -2,8 +2,8 @@
   <section id="partners" class="partners-section no-min-h pb-5">
     <div class="container">
       <div class="rounded-box  bg-yellow">
-        <h3 class="d-block text-center tbase p-5 m-0" v-html="data.title"></h3>
-        <div class="partners-list d-flex flex-wrap p-5">
+        <h3 class="d-block text-center tbase px-5 py-4 p-sm-5 m-0" v-html="data.title"></h3>
+        <div class="partners-list d-flex flex-wrap p-2 p-sm-5">
           <div class="partner"
                v-for="(partner,index) in allPartners"
                :key="'partner-'+partner.name">

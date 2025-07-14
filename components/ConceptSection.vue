@@ -6,12 +6,12 @@
         <div class="col-12 text-center">
           <h2 class="section-title d-block text-center sans tbase text-uppercase">{{ data.title }}</h2>
         </div>
-        <div class="col-md-3 offset-md-2 pr-md-5 text-right">
+        <div class="col-md-3 offset-md-2 pr-md-5 text-center text-md-right">
 
           <picture>
             <img
               src="https://picsum.photos/286/440?random=1"
-              class="roundimage"
+              class="roundimage mb-3 "
               loading="lazy"
             />
           </picture>

@@ -6,6 +6,8 @@
   }
 }
 .t1{
+  font-size: 60px;
+  line-height: 0.8;
   @include media-breakpoint-up(md) {
     font-size: 140px;
     line-height: 0.8;
@@ -16,6 +18,8 @@
   }
 }
 .t1b{
+  font-size: 22px;
+  line-height: 0.8;
   @include media-breakpoint-up(md) {
     font-size: 70px;
     line-height: 0.8;
@@ -26,12 +30,24 @@
   }
 }
 .t2{
+  font-size: 50px;
+  line-height: 1;
+  @include media-breakpoint-up(md) {
+    font-size: 50px;
+    line-height: 1;
+  }
+}
+.t2b{
+  font-size: 20px;
+  line-height: 1;
   @include media-breakpoint-up(md) {
     font-size: 50px;
     line-height: 1;
   }
 }
 .t3{
+  font-size: 20px;
+  line-height: 1.2;
   @include media-breakpoint-up(md) {
     font-size: 30px;
     line-height: 1;
@@ -50,7 +66,7 @@
   }
 }
 .t5{
-  font-size: 16px;
+  font-size: 14px;
   @include media-breakpoint-up(md) {
     font-size: 18px;
     line-height: 1.4;
@@ -62,6 +78,9 @@
 }
 .text-italic{
   font-style: italic;
+}
+.text-no-italic{
+  font-style: normal!important;
 }
 h1, h2 {
    font-family: $font-family-headings;

@@ -19,7 +19,15 @@
 
 
       <!-- Locations Gallery -->
-      <div class="locations-container">
+      <div class="locations-container d-block d-sm-none">
+        <LocationGallerySm
+          v-for="(location, index) in allLocations"
+          :key="location.name"
+          :location="location"
+          :index="index"
+        />
+      </div>
+      <div class="locations-container d-none d-sm-block">
         <LocationGallery
           v-for="(location, index) in allLocations"
           :key="location.name"
@@ -37,6 +45,7 @@
 <script>
 import {mapGetters} from 'vuex'
 import LocationGallery from '~/components/LocationGallery.vue'
+import LocationGallerySm from '~/components/LocationGallerySm.vue'
 import LocationLink from "~/components/LocationLink.vue"
 import ArrowRight from "~/components/ArrowRight.vue"
 
@@ -45,7 +54,8 @@ export default {
   components: {
     ArrowRight,
     LocationLink,
-    LocationGallery
+    LocationGallery,
+    LocationGallerySm
   },
   props: {
     data: {

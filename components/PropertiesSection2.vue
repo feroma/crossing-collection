@@ -22,7 +22,7 @@
           </span>
 
           <span class="location-link arrow-link">
-                  <span class="label">Discover</span>
+                  <span class="label sans text-no-italic">Discover</span>
                   <span class="icon"><arrow-right/></span>
           </span>
         </a>
