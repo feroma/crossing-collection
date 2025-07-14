@@ -29,6 +29,101 @@ export const state = () => ({
   modalOpen: false,
   locationsModalOpen: false,
 
+  // Array dei partner
+// Array dei partner
+  partners: [
+    {
+      id: 1,
+      name: 'Mr & Mrs Smith',
+      logo: 'https://www.stage72.info/crossing-collection/repo/logo/01_mr_mrs_smith.png',
+      alt: 'Mr & Mrs Smith - Boutique hotel booking platform and luxury travel specialists'
+    },
+    {
+      id: 2,
+      name: 'Aficionados',
+      logo: 'https://www.stage72.info/crossing-collection/repo/logo/02_aficionados.png',
+      alt: 'The Aficionados - Curated design hotels and luxury travel culture magazine'
+    },
+    {
+      id: 3,
+      name: 'Tablet Hotels',
+      logo: 'https://www.stage72.info/crossing-collection/repo/logo/03_tablet_hotels.png',
+      alt: 'Tablet Hotels - Original curated luxury and boutique hotel selection, a Michelin experience'
+    },
+    {
+      id: 4,
+      name: 'XO',
+      logo: 'https://www.stage72.info/crossing-collection/repo/logo/04_xo.png',
+      alt: 'XO - Luxury private jet travel platform and aviation experience provider'
+    },
+    {
+      id: 5,
+      name: 'The Thinking Traveller',
+      logo: 'https://www.stage72.info/crossing-collection/repo/logo/05_the_thinking_traveller.png',
+      alt: 'The Thinking Traveller - World\'s best villa rental company with luxury Mediterranean properties'
+    },
+    {
+      id: 6,
+      name: 'Virtuoso',
+      logo: 'https://www.stage72.info/crossing-collection/repo/logo/06_virtuoso.png',
+      alt: 'Virtuoso - Leading global luxury travel network and agency consortium'
+    },
+    {
+      id: 7,
+      name: 'SmartFlyer',
+      logo: 'https://www.stage72.info/crossing-collection/repo/logo/07_smartflyer.png',
+      alt: 'SmartFlyer - Full-service luxury travel agency for curious travelers worldwide'
+    },
+    {
+      id: 8,
+      name: 'Fora',
+      logo: 'https://www.stage72.info/crossing-collection/repo/logo/08_fora.png',
+      alt: 'Fora - Modern travel agency platform empowering luxury travel advisors'
+    },
+    {
+      id: 9,
+      name: 'Serendipians',
+      logo: 'https://www.stage72.info/crossing-collection/repo/logo/09_serendipians.png',
+      alt: 'Serendipians - Exclusive community of luxury travel designers and bespoke experience creators'
+    },
+    {
+      id: 10,
+      name: 'Savenio',
+      logo: 'https://www.stage72.info/crossing-collection/repo/logo/10_savenio.png',
+      alt: 'Savenio - Luxury travel and lifestyle concierge services platform'
+    },
+    {
+      id: 11,
+      name: 'Quintessentially',
+      logo: 'https://www.stage72.info/crossing-collection/repo/logo/11_quintessentially.png',
+      alt: 'Quintessentially - Premier luxury lifestyle management and concierge services'
+    },
+    {
+      id: 12,
+      name: 'Abercrombie & Kent',
+      logo: 'https://www.stage72.info/crossing-collection/repo/logo/12_abercrombie_kent.png',
+      alt: 'Abercrombie & Kent - Luxury adventure travel and safari specialists since 1962'
+    },
+    {
+      id: 13,
+      name: 'Carson',
+      logo: 'https://www.stage72.info/crossing-collection/repo/logo/13_carson.png',
+      alt: 'Carson - Luxury travel and hospitality management services'
+    },
+    {
+      id: 14,
+      name: 'CB',
+      logo: 'https://www.stage72.info/crossing-collection/repo/logo/14_cb.png',
+      alt: 'CB - Premium travel and lifestyle brand partner'
+    },
+    {
+      id: 15,
+      name: 'Frosch',
+      logo: 'https://www.stage72.info/crossing-collection/repo/logo/15_frosch.png',
+      alt: 'Frosch - Luxury travel agency and vacation planning specialists'
+    }
+  ],
+
   // Array delle locations/proprietà
   locations: [
     {
@@ -409,7 +504,17 @@ export const state = () => ({
           }
         ]
       }
-    }
+    },
+    {
+      id: 'partners',
+      name: 'Partners',
+      type: 'partners',
+      visible: true,
+      order: 3,
+      content: {
+        title: 'PROUD OF BEING CHOSEN BY'
+      }
+    },
   ]
 })
 
@@ -471,6 +576,11 @@ export const getters = {
   // Getter per il modal
   isModalOpen: state => state.modalOpen,
   isLocationsModalOpen: state => state.locationsModalOpen,
+
+  // Getters per i partners
+  allPartners: state => state.partners,
+  getPartnerById: state => id => state.partners.find(partner => partner.id === id),
+  getPartnerByName: state => name => state.partners.find(partner => partner.name === name),
 
   // Getters per le locations
   allLocations: state => state.locations,

@@ -508,12 +508,80 @@ img {
 .team-section{
   position: relative;
   z-index: 2;
-
-  transform: translateY(-190px);
+  margin-top: -190px;
+  //transform: translateY(-190px);
   .container{
     padding-top: 180px;
     border-top-left-radius: 90px;
     border-top-right-radius: 90px;
-    padding-bottom: 180px;
   }
+}
+.rounded-box{
+  border-radius: 90px;
+}
+#partners{
+  background: linear-gradient(0deg, rgba($blue, 1) 0%, rgba($blue, 0) 100%);
+  position: relative;
+  .container{
+    position: relative;
+    z-index: 2;
+  }
+  .rounded-box{
+    position: relative;
+    z-index: 2;
+    padding-bottom: 90px;
+  }
+  &:before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 20vh;
+    background-color: $teal;
+    bottom: 0;
+    left: 0;
+  }
+}
+.partners-list{
+  border-bottom: solid 1px $blue;
+  border-top: solid 1px $blue;
+
+  .partner{
+    mix-blend-mode: multiply;
+    padding: 5px;
+    flex: 1 1 33.33333333%;
+    width: 33.33333333%;
+    @include media-breakpoint-up(sm) {
+      flex: 1 1 20%;
+      width: 20%;
+    }
+  }
+}
+.footer{
+  border-top: solid 1px $gray;
+}
+.footer-nav{
+  a{
+    @extend .serif;
+    @extend .text-white;
+    @extend .text-italic;
+    @extend .t2;
+    padding: 15px 0;
+    display: block;
+  }
+}
+.footer-logo {
+  border-top: solid 1px $gray;
+  svg{
+    flex: 0 0 60%;
+    width: 60%;
+    height: auto;
+  }
+  @include media-breakpoint-up(sm) {
+    svg{
+      flex: 0 0 49%;
+      width: 49%;
+      height: auto;
+    }
+  }
+
 }
