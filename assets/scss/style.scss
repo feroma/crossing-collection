@@ -527,11 +527,16 @@ img {
 
 .art-design-section {
   padding-top: 90px;
-  padding-bottom: 90px;
   @include media-breakpoint-up(md) {
     padding-top: 180px;
-    padding-bottom: 180px;
   }
+  .container{
+    padding-bottom: 90px;
+    @include media-breakpoint-up(md) {
+      padding-bottom: 180px;
+    }
+  }
+
   .art {
     transform: translateY(-45px);
     @include media-breakpoint-up(md) {

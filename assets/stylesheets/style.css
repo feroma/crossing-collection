@@ -5608,12 +5608,15 @@ img {
           margin-right: 30px; } }
 
 .art-design-section {
-  padding-top: 90px;
-  padding-bottom: 90px; }
+  padding-top: 90px; }
   @media (min-width: 920px) {
     .art-design-section {
-      padding-top: 180px;
-      padding-bottom: 180px; } }
+      padding-top: 180px; } }
+  .art-design-section .container {
+    padding-bottom: 90px; }
+    @media (min-width: 920px) {
+      .art-design-section .container {
+        padding-bottom: 180px; } }
   .art-design-section .art {
     transform: translateY(-45px);
     position: relative; }

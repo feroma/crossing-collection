@@ -10,12 +10,12 @@
       </div>
       <div class="row no-gutters align-items-center py-5">
         <div class="col-sm-3">
-          <p class="arrow-link">
+          <div class="arrow-link">
             <span class="label sans">Scroll to see</span>
             <span class="icon">
               <arrow-right/>
             </span>
-          </p>
+          </div>
         </div>
 
         <div class="d-sm-none">
@@ -34,6 +34,7 @@
         </div>
 
         <div class="col-sm-9 d-none d-sm-block">
+
           <swiper :options="swiperOptions"
                   ref="artSwiper"
                   class="art-carousel">
@@ -46,12 +47,13 @@
               <p>{{ item.alt }}</p>
             </swiper-slide>
           </swiper>
+
+
           <!-- Pagination Dots -->
           <div class="art-carousel-pagination carousel-pagination"></div>
+
+
         </div>
-
-
-
 
 
       </div>
@@ -67,15 +69,19 @@ import ArtLogo from "~/components/ArtLogo.vue"
 
 export default {
   name: 'ArtDesignSection',
-  components: {ArtLogo, PictureWrapper, ArrowRight},
+  components: {
+
+    ArtLogo, PictureWrapper, ArrowRight
+  },
   props: {
     data: {
       type: Object,
       required: true
     }
   },
-  data() {
+  data () {
     return {
+      mounted: false,
       swiperOptions: {
         slidesPerView: 'auto',
         spaceBetween: 20,
@@ -86,13 +92,13 @@ export default {
           el: '.art-carousel-pagination',
           clickable: true,
           type: 'bullets',
-         // dynamicBullets: true,
-          dynamicMainBullets: 5,
+          // dynamicBullets: true,
+          dynamicMainBullets: 5
         },
         on: {
-          init: function() {
-            this.update();
-            this.pagination.update();
+          init: function () {
+            this.update()
+            this.pagination.update()
           }
         },
         breakpoints: {
@@ -100,41 +106,39 @@ export default {
           320: {
             slidesPerView: 'auto',
             spaceBetween: 15,
-            freeMode: true,
+            freeMode: true
           },
           // Tablet e desktop - ticker completo
           768: {
             slidesPerView: 'auto',
             spaceBetween: 15,
-            freeMode: true,
+            freeMode: true
           },
           992: {
             slidesPerView: 'auto',
             spaceBetween: 15,
-            freeMode: true,
+            freeMode: true
           }
         }
       }
     }
   },
-  mounted() {
+  mounted () {
     // SOLUZIONE 4: Forza l'aggiornamento della paginazione
-    this.$nextTick(() => {
-      this.$nextTick(() => {
-        setTimeout(()=>{
-          console.clear()
-          // Opzione 2: Se la precedente non funziona, prova con querySelector
-          const swiperEl = document.querySelector('.art-carousel');
-          if (swiperEl && swiperEl.swiper) {
-            console.log('************************')
-            swiperEl.swiper.update();
-            swiperEl.swiper.pagination.update();
-          }
-        },1000)
 
-      });
+    console.log('INIT MOUNTED')
+    this.mounted = true
+    setTimeout(() => {
 
-    });
+      console.log('INIT setTimeout')
+      // Opzione 2: Se la precedente non funziona, prova con querySelector
+      const swiperEl = document.querySelector('.art-carousel')
+      if (swiperEl && swiperEl.swiper) {
+        console.log('************************')
+        swiperEl.swiper.update()
+        swiperEl.swiper.pagination.update()
+      }
+    }, 2000)
   }
 }
 </script>

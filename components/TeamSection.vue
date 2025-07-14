@@ -50,7 +50,10 @@ import ArrowRight from "~/components/ArrowRight.vue"
 
 export default {
   name: 'TeamSection',
-  components: {ArrowRight, ArrowLeft},
+  components: {
+    Swiper: () => import('vue-awesome-swiper').then(m => m.Swiper),
+    SwiperSlide: () => import('vue-awesome-swiper').then(m => m.SwiperSlide),
+    ArrowRight, ArrowLeft},
   props: {
     data: {
       type: Object,
