@@ -19,13 +19,14 @@
         </div>
         <div class="col-sm-9">
           <swiper :options="swiperOptions"
+                  ref="artSwiper"
                   class="art-carousel">
             <swiper-slide
               v-for="(item,index) in data.gallery"
               :key="'art-gallery-'+index"
               class="art-slide"
             >
-             <picture-wrapper :image="item"/>
+              <picture-wrapper :image="item"/>
               <p>{{ item.alt }}</p>
             </swiper-slide>
           </swiper>
@@ -63,6 +64,15 @@ export default {
         pagination: {
           el: '.art-carousel-pagination',
           clickable: true,
+          type: 'bullets',
+         // dynamicBullets: true,
+          dynamicMainBullets: 5,
+        },
+        on: {
+          init: function() {
+            this.update();
+            this.pagination.update();
+          }
         },
         breakpoints: {
           // Mobile - mostra quanto possibile
@@ -85,6 +95,30 @@ export default {
         }
       }
     }
+  },
+  mounted() {
+    // SOLUZIONE 4: Forza l'aggiornamento della paginazione
+    this.$nextTick(() => {
+      this.$nextTick(() => {
+        setTimeout(()=>{
+          console.clear()
+          // Opzione 2: Se la precedente non funziona, prova con querySelector
+          const swiperEl = document.querySelector('.art-carousel');
+          if (swiperEl && swiperEl.swiper) {
+            console.log('************************')
+            swiperEl.swiper.update();
+            swiperEl.swiper.pagination.update();
+          }
+        },1000)
+
+      });
+
+    });
   }
 }
 </script>
+
+<style scoped>
+/* Stili per il ticker delle immagini art & design */
+
+</style>

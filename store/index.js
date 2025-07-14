@@ -330,7 +330,7 @@ export const state = () => ({
       visible: true,
       order: 5,
       content: {
-        title: 'Meet Our Team',
+        title: 'Meet <em>Our</em> Team',
         staff: [
           {
             name: 'Alfio',

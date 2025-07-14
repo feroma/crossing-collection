@@ -159,7 +159,7 @@ body.modal-open {
 }
 
 .header-padding {
-  padding-top: 90px;
+  padding-top: 110px;
 }
 
 .modal-overlay {
@@ -484,6 +484,10 @@ img {
   }
 }
 
+.art-slide {
+  width: auto !important;
+  height: auto;
+}
 .art-carousel{
   picture{
     display: inline;
@@ -492,10 +496,11 @@ img {
       padding-bottom: 15px;
       height: 600px;
       width: auto;
+      object-fit: cover;
     }
   }
   .swiper-slide{
-    width: auto;
+    width: auto !important;
   }
 
 }

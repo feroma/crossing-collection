@@ -1,7 +1,7 @@
 <template>
   <section id="team" class="team-section">
     <div class="container">
-      <h2 class="section-title">{{ data.title }}</h2>
+      <h2 class=" text-center section-title t1b" v-html="data.title"></h2>
 
       <!-- Team Carousel -->
       <div class="team-carousel-container">

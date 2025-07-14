@@ -5396,7 +5396,7 @@ body.modal-open {
     background: none; }
 
 .header-padding, .modal-overlay, section {
-  padding-top: 90px; }
+  padding-top: 110px; }
 
 .modal-overlay {
   position: fixed;
@@ -5617,13 +5617,18 @@ img {
     .art-design-section .swiper-pagination-bullet.active {
       background-color: #6289AA; }
 
+.art-slide {
+  width: auto !important;
+  height: auto; }
+
 .art-carousel picture {
   display: inline; }
   .art-carousel picture img {
     padding-bottom: 15px;
     height: 600px;
-    width: auto; }
+    width: auto;
+    object-fit: cover; }
 .art-carousel .swiper-slide {
-  width: auto; }
+  width: auto !important; }
 
 /*# sourceMappingURL=style.css.map */
