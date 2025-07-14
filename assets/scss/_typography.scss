@@ -21,7 +21,7 @@
     line-height: 0.8;
   }
   @include media-breakpoint-up(xl) {
-    font-size: 80px;
+    font-size: 78px;
     line-height: 0.8;
   }
 }
@@ -41,6 +41,10 @@
 .t4{
   font-size: 20px;
   @include media-breakpoint-up(md) {
+    font-size: 26px;
+    line-height: 1.2;
+  }
+  @include media-breakpoint-up(xl) {
     font-size: 30px;
     line-height: 1.2;
   }

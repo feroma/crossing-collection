@@ -5,7 +5,7 @@
       <div class="container">
 
         <div class="main-menu">
-          <div class="header-nav">
+          <div class="header-nav justify-content-end">
           <a
             href="#concept"
             @click="scrollToSection('concept', $event)"
@@ -88,18 +88,18 @@
         :data="getSection('whereabouts').content"
       />
 
-<!--      <PropertiesSection-->
-<!--        v-if="getSection('properties')"-->
-<!--        :data="getSection('properties').content"-->
-<!--      />-->
-<!--      <PropertiesSection2-->
-<!--        v-if="getSection('properties')"-->
-<!--        :data="getSection('properties').content"-->
-<!--      />-->
-<!--      <ArtDesignSection-->
-<!--        v-if="getSection('art-design')"-->
-<!--        :data="getSection('art-design').content"-->
-<!--      />-->
+      <PropertiesSection
+        v-if="getSection('properties')"
+        :data="getSection('properties').content"
+      />
+      <PropertiesSection2
+        v-if="getSection('properties')"
+        :data="getSection('properties').content"
+      />
+      <ArtDesignSection
+        v-if="getSection('art-design')"
+        :data="getSection('art-design').content"
+      />
 
       <TeamSection
         v-if="getSection('team')"

@@ -1,6 +1,6 @@
 <template>
 
-  <section id="properties-links" class="properties-section2">
+  <section id="properties-links" class="properties-section2 no-min-h">
     <div class="container">
       <h2 class="section-title d-block text-center sans tbase text-uppercase border-title">The Collection</h2>
 
