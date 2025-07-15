@@ -34,27 +34,47 @@
         </div>
 
         <div class="col-sm-9 d-none d-sm-block">
-
-          <swiper :options="swiperOptions"
+          <!-- Wrapper per evitare problemi di hydration -->
+          <client-only>
+            <template>
+              <div v-if="mounted">
+                <swiper
+                  :options="swiperOptions"
                   ref="artSwiper"
-                  class="art-carousel">
-            <swiper-slide
-              v-for="(item,index) in data.gallery"
-              :key="'art-gallery-'+index"
-              class="art-slide"
-            >
-              <picture-wrapper :image="item"/>
-              <p>{{ item.alt }}</p>
-            </swiper-slide>
-          </swiper>
+                  class="art-carousel"
+                >
+                  <swiper-slide
+                    v-for="(item,index) in data.gallery"
+                    :key="'art-gallery-'+index"
+                    class="art-slide"
+                  >
+                    <picture-wrapper :image="item"/>
+                    <p>{{ item.alt }}</p>
+                  </swiper-slide>
+                </swiper>
 
+                <!-- Pagination Dots -->
+                <div class="art-carousel-pagination carousel-pagination"></div>
+              </div>
+            </template>
 
-          <!-- Pagination Dots -->
-          <div class="art-carousel-pagination carousel-pagination"></div>
-
-
+            <!-- Placeholder durante il loading -->
+            <template #placeholder>
+              <div class="swiper-placeholder">
+                <div class="placeholder-slides">
+                  <div
+                    v-for="(item,index) in data.gallery.slice(0, 3)"
+                    :key="'placeholder-'+index"
+                    class="placeholder-slide"
+                  >
+                    <picture-wrapper :image="item"/>
+                    <p>{{ item.alt }}</p>
+                  </div>
+                </div>
+              </div>
+            </template>
+          </client-only>
         </div>
-
 
       </div>
 
@@ -70,8 +90,9 @@ import ArtLogo from "~/components/ArtLogo.vue"
 export default {
   name: 'ArtDesignSection',
   components: {
-
-    ArtLogo, PictureWrapper, ArrowRight
+    ArtLogo,
+    PictureWrapper,
+    ArrowRight
   },
   props: {
     data: {
@@ -92,23 +113,14 @@ export default {
           el: '.art-carousel-pagination',
           clickable: true,
           type: 'bullets',
-          // dynamicBullets: true,
           dynamicMainBullets: 5
         },
-        on: {
-          init: function () {
-            this.update()
-            this.pagination.update()
-          }
-        },
         breakpoints: {
-          // Mobile - mostra quanto possibile
           320: {
             slidesPerView: 'auto',
             spaceBetween: 15,
             freeMode: true
           },
-          // Tablet e desktop - ticker completo
           768: {
             slidesPerView: 'auto',
             spaceBetween: 15,
@@ -124,21 +136,26 @@ export default {
     }
   },
   mounted () {
-    // SOLUZIONE 4: Forza l'aggiornamento della paginazione
+    // Aspetta che il DOM sia completamente pronto
+    this.$nextTick(() => {
+      this.mounted = true
 
-    console.log('INIT MOUNTED')
-    this.mounted = true
-    setTimeout(() => {
-
-      console.log('INIT setTimeout')
-      // Opzione 2: Se la precedente non funziona, prova con querySelector
-      const swiperEl = document.querySelector('.art-carousel')
-      if (swiperEl && swiperEl.swiper) {
-        console.log('************************')
-        swiperEl.swiper.update()
-        swiperEl.swiper.pagination.update()
+      // Aspetta che lo swiper sia renderizzato
+      this.$nextTick(() => {
+        setTimeout(() => {
+          this.initSwiper()
+        }, 2000)
+      })
+    })
+  },
+  methods: {
+    initSwiper() {
+      if (this.$refs.artSwiper && this.$refs.artSwiper.$swiper) {
+        console.log('Swiper initialized and updated')
+        this.$refs.artSwiper.$swiper.update()
+        this.$refs.artSwiper.$swiper.pagination.update()
       }
-    }, 2000)
+    }
   }
 }
 </script>
@@ -146,4 +163,24 @@ export default {
 <style scoped>
 /* Stili per il ticker delle immagini art & design */
 
+/* Placeholder styles per evitare layout shift */
+.swiper-placeholder {
+  width: 100%;
+  overflow: hidden;
+}
+
+.placeholder-slides {
+  display: flex;
+  gap: 20px;
+}
+
+.placeholder-slide {
+  flex: 0 0 auto;
+  opacity: 0.7;
+}
+
+/* Assicurati che lo swiper non causi problemi di layout */
+.art-carousel {
+  width: 100%;
+}
 </style>

@@ -101,10 +101,10 @@
         :data="getSection('art-design').content"
       />
 
-<!--      <TeamSection-->
-<!--        v-if="getSection('team')"-->
-<!--        :data="getSection('team').content"-->
-<!--      />-->
+      <TeamSection
+        v-if="getSection('team')"
+        :data="getSection('team').content"
+      />
       <PartnersSection v-if="getSection('partners')"
                        :data="getSection('partners').content"/>
     </main>

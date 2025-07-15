@@ -1,8 +1,20 @@
 import Vue from 'vue'
-import VueAwesomeSwiper from 'vue-awesome-swiper'
 
-// Import Swiper styles for version 5
-import 'swiper/css/swiper.css'
+// Importa solo quando siamo nel browser
+if (process.client) {
+  const VueAwesomeSwiper = require('vue-awesome-swiper')
 
-// Use plugin
-Vue.use(VueAwesomeSwiper)
+  // Prova prima questo path per CSS
+  try {
+    require('swiper/dist/css/swiper.css')
+  } catch (e) {
+    // Se non funziona, prova questo
+    try {
+      require('swiper/css/swiper.css')
+    } catch (e2) {
+      console.warn('Could not load Swiper CSS')
+    }
+  }
+
+  Vue.use(VueAwesomeSwiper)
+}

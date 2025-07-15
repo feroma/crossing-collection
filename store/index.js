@@ -132,7 +132,7 @@ export const state = () => ({
       location: 'Milan',
       website: 'https://www.crossingmanzoni.it',
       mainImage: {
-        desktop: 'https://picsum.photos/800/600?random=1',
+        desktop: 'https://picsum.photos/1200/628?random=1',
         mobile: 'https://picsum.photos/322/498?random=1',
         alt: 'Crossing Manzoni - Main view'
       },
@@ -165,7 +165,7 @@ export const state = () => ({
       location: 'Rome',
       website: 'https://www.crossingcondotti.it',
       mainImage: {
-        desktop: 'https://picsum.photos/800/600?random=5',
+        desktop: 'https://picsum.photos/1200/628?random=5',
         mobile: 'https://picsum.photos/322/498?random=5',
         alt: 'Crossing Condotti - Main view'
       },
@@ -198,7 +198,7 @@ export const state = () => ({
       location: 'Rome',
       website: 'https://www.crossingcondotti.it',
       mainImage: {
-        desktop: 'https://picsum.photos/800/600?random=10',
+        desktop: 'https://picsum.photos/1200/628?random=10',
         mobile: 'https://picsum.photos/322/498?random=10',
         alt: 'Crossing Corso - Main view'
       },
@@ -231,7 +231,7 @@ export const state = () => ({
       location: 'Sicily',
       website: 'https://www.crossingtherock.com',
       mainImage: {
-        desktop: 'https://picsum.photos/800/600?random=14',
+        desktop: 'https://picsum.photos/1200/628?random=14',
         mobile: 'https://picsum.photos/322/498?random=14',
         alt: 'Crossing The Rock - Main view'
       },
@@ -270,7 +270,7 @@ export const state = () => ({
       location: 'Mediterranean Sea',
       website: 'https://www.crossing-the-sea.com',
       mainImage: {
-        desktop: 'https://picsum.photos/800/600?random=19',
+        desktop: 'https://picsum.photos/1200/628?random=19',
         mobile: 'https://picsum.photos/322/498?random=19',
         alt: 'Crossing The Sea - Main view'
       },
@@ -312,8 +312,8 @@ export const state = () => ({
       location: 'Rome',
       website: 'https://www.crossingcondotti.it',
       mainImage: {
-        desktop: 'https://picsum.photos/800/600?random=5',
-        mobile: 'https://picsum.photos/400/300?random=5',
+        desktop: 'https://picsum.photos/800/510?random=5',
+        mobile: 'https://picsum.photos/400/255?random=5',
         alt: 'Crossing Condotti & Corso - Main view'
       }
     },
@@ -322,8 +322,8 @@ export const state = () => ({
       location: 'Milan',
       website: 'https://www.crossingmanzoni.it',
       mainImage: {
-        desktop: 'https://picsum.photos/800/600?random=1',
-        mobile: 'https://picsum.photos/400/300?random=1',
+        desktop: 'https://picsum.photos/800/510?random=1',
+        mobile: 'https://picsum.photos/400/255?random=1',
         alt: 'Crossing Manzoni - Main view'
       }
     },
@@ -333,8 +333,8 @@ export const state = () => ({
       location: 'Sicily',
       website: 'https://www.crossingtherock.com',
       mainImage: {
-        desktop: 'https://picsum.photos/800/600?random=14',
-        mobile: 'https://picsum.photos/400/300?random=14',
+        desktop: 'https://picsum.photos/800/510?random=14',
+        mobile: 'https://picsum.photos/400/255?random=14',
         alt: 'Crossing The Rock - Main view'
       }
     },
@@ -343,8 +343,8 @@ export const state = () => ({
       location: 'Mediterranean Sea',
       website: 'https://www.crossing-the-sea.com',
       mainImage: {
-        desktop: 'https://picsum.photos/800/600?random=19',
-        mobile: 'https://picsum.photos/400/300?random=19',
+        desktop: 'https://picsum.photos/800/510?random=19',
+        mobile: 'https://picsum.photos/400/255?random=19',
         alt: 'Crossing The Sea - Main view'
       }
     }
