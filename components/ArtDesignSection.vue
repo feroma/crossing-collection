@@ -14,7 +14,7 @@
 
 
         <div class="col-sm-12 col-md-3 d-flex justify-content-center">
-          <div class="arrow-link my-3">
+          <div class="arrow-link no-cta my-3">
             <span class="label sans">Scroll to see</span>
             <span class="icon">
               <arrow-right/>

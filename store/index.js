@@ -356,7 +356,7 @@ export const state = () => ({
       visible: true,
       order: 1,
       content: {
-        title: 'Concept',
+        _title: 'Concept',
         summary: 'A stay with Crossing is all about relaxing into the <em>comfort of elegance, design</em> and <em>assiduous concierge service</em> to elevate each day. Let us sweep you off your feet with Italian lifestyle and hospitality.',
         body: 'Crossing Collection is an Italian boutique property group with two accommodations in Milan and Rome, a luxury villa in Sicily and a premium yachting holiday experience with routes in Greece and Italy. Our enterprise is the result of a lifetime passion for iconic design, contemporary art, and an eternal wanderlust fuelling a curiosity and passion to meet and host cosmopolitan travellers from all over the world.'
       }

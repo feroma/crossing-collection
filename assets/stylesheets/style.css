@@ -5305,7 +5305,7 @@ h1, h2, h3 {
     width: auto; }
 
 header {
-  background: linear-gradient(180deg, #f8f4ee 50%, rgba(248, 244, 238, 0) 100%);
+  background-color: #F8F4EE;
   width: 100vw;
   position: fixed;
   left: 0;
@@ -5378,6 +5378,8 @@ header {
     position: relative;
     z-index: 1;
     margin-left: -10px; }
+  .arrow-link.no-cta .icon {
+    border: none !important; }
 
 .arrow-link-alt {
   flex-direction: column; }
@@ -5730,9 +5732,10 @@ img {
         z-index: 0;
         background-image: url("https://www.stage72.info/crossing-collection/repo/greca2.png");
         background-size: contain;
-        width: 40%;
+        width: 32%;
         height: 100%;
-        right: 30%;
+        right: 50%;
+        transform: translateX(50%);
         top: 00px; } }
 
 .scroll-gallery {
