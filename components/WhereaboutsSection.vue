@@ -4,7 +4,7 @@
       <div class="row align-items-center">
 
 
-        <div class="col-md-6 order-md-2">
+        <div class="col-sm-6 order-sm-2">
           <picture>
             <source
               srcset="https://www.stage72.info/crossing-collection/repo/italy_sm.jpg"
@@ -18,8 +18,9 @@
             >
           </picture>
         </div>
-        <div class="col-md-4 offset-md-2 order-md-1">
+        <div class="col-sm-4 offset-sm-2 order-sm-1">
           <h2 class="section-title d-block text-center sans tbase text-uppercase">{{ data.title }}</h2>
+          <h3 v-if="data.summary" class="summary serif" v-html="data.summary"></h3>
           <div class="body" v-html="data.body"></div>
 
         </div>

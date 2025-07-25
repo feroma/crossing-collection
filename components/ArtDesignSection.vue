@@ -1,7 +1,9 @@
 <template>
   <section id="art-design" class="art-design-section">
-    <div class="container bg-teal">
+    <div class="container bg-teal position-relative">
 
+      <div class="flower flower-1"></div>
+      <div class="flower flower-2"></div>
       <art-logo :data="data"/>
       <div class="row">
         <div class="col-sm-6 offset-sm-3">
@@ -9,16 +11,19 @@
         </div>
       </div>
       <div class="row no-gutters align-items-center py-5">
-        <div class="col-sm-3">
-          <div class="arrow-link">
+
+
+        <div class="col-sm-12 col-md-3 d-flex justify-content-center">
+          <div class="arrow-link my-3">
             <span class="label sans">Scroll to see</span>
             <span class="icon">
               <arrow-right/>
             </span>
           </div>
         </div>
+        <!--    ==================   MOBILE-->
+        <div class="d-md-none">
 
-        <div class="d-sm-none">
           <div class="scroll-gallery">
             <div class="content">
               <div
@@ -33,7 +38,9 @@
           </div>
         </div>
 
-        <div class="col-sm-9 d-none d-sm-block">
+
+        <!--    ==================   DESKTOP -->
+        <div class="col-md-9 d-none d-md-block">
           <!-- Wrapper per evitare problemi di hydration -->
           <client-only>
             <template>

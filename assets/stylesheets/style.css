@@ -5043,7 +5043,7 @@ a.text-dark:hover, a.text-dark:focus {
   color: #e5e5e5 !important; }
 
 /* Team Carousel - Effetto peek con opacit├á e larghezza minima */
-@media (min-width: 680px) {
+@media (min-width: 920px) {
   .team-carousel:before {
     content: '';
     position: absolute;
@@ -5079,7 +5079,7 @@ a.text-dark:hover, a.text-dark:focus {
   .team-carousel .swiper-slide.swiper-slide-active {
     opacity: 1;
     transform: scale(1); }
-@media (max-width: 919.98px) {
+@media (max-width: 679.98px) {
   .team-carousel .swiper-slide {
     opacity: 1 !important;
     transform: scale(1) !important;
@@ -5104,13 +5104,13 @@ a.text-dark:hover, a.text-dark:focus {
     stroke: #161B1F !important; }
   .carousel-arrow-prev {
     left: 5px; }
-    @media (min-width: 680px) {
+    @media (min-width: 920px) {
       .carousel-arrow-prev {
         left: 50%;
         transform: translateX(calc(-20vw - 60%)) translateY(-50%); } }
   .carousel-arrow-next {
     right: -5px; }
-    @media (min-width: 680px) {
+    @media (min-width: 920px) {
       .carousel-arrow-next {
         right: 50%;
         transform: translateX(calc(20vw + 80%)) translateY(-50%); } }
@@ -5121,9 +5121,21 @@ a.text-dark:hover, a.text-dark:focus {
   border: solid 1px #6289AA;
   padding: 30px 60px;
   transition: transform 0.3s ease; }
-  @media (min-width: 680px) {
+  @media (min-width: 920px) {
     .staff-member {
       padding: 60px; } }
+  .staff-member .staff-header {
+    display: flex;
+    align-items: center; }
+    .staff-member .staff-header .icon {
+      height: auto;
+      width: 80px;
+      flex: 0;
+      margin-right: 15px; }
+      @media (min-width: 920px) {
+        .staff-member .staff-header .icon {
+          width: 120px;
+          flex: 0; } }
 
 .menu-icon {
   cursor: pointer;
@@ -5162,6 +5174,12 @@ a.text-dark:hover, a.text-dark:focus {
 .tbase, body {
   font-size: 12px;
   font-weight: 500; }
+  @media (min-width: 680px) {
+    .tbase, body {
+      font-size: 14px; } }
+  @media (min-width: 1360px) {
+    .tbase, body {
+      font-size: 16px; } }
   @media (min-width: 1920px) {
     .tbase, body {
       font-size: 16px; } }
@@ -5181,7 +5199,15 @@ a.text-dark:hover, a.text-dark:focus {
 .t1b {
   font-size: 22px;
   line-height: 0.8; }
+  @media (min-width: 680px) {
+    .t1b {
+      font-size: 32px;
+      line-height: 0.8; } }
   @media (min-width: 920px) {
+    .t1b {
+      font-size: 48px;
+      line-height: 0.8; } }
+  @media (min-width: 1360px) {
     .t1b {
       font-size: 70px;
       line-height: 0.8; } }
@@ -5431,8 +5457,9 @@ body.modal-open {
 /**
 ============================================SECTIONS
  */
-section {
-  min-height: 100vh; }
+@media (min-width: 920px) {
+  section {
+    min-height: 100vh; } }
 
 .no-min-h {
   min-height: auto; }
@@ -5533,7 +5560,7 @@ img {
   max-width: 100%;
   height: auto;
   mix-blend-mode: multiply; }
-@media (max-width: 919.98px) {
+@media (max-width: 679.98px) {
   .whereabouts-section picture {
     margin: 0 -15px;
     width: 100vw;
@@ -5632,15 +5659,81 @@ img {
       .art-design-section .container {
         border-top-left-radius: 90px;
         border-top-right-radius: 90px; } }
+    .art-design-section .container .flower {
+      background-image: url("https://www.stage72.info/crossing-collection/repo/flower.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+      position: absolute;
+      z-index: 0;
+      width: 90vw;
+      height: 90vw; }
+      @media (min-width: 920px) {
+        .art-design-section .container .flower {
+          width: 33vw;
+          height: 33vw;
+          max-width: 400px;
+          max-height: 400px; } }
+    .art-design-section .container .flower-1 {
+      left: 0;
+      top: 0;
+      transform: translateY(-21%) translateX(7%) rotate(180deg); }
+      @media (min-width: 920px) {
+        .art-design-section .container .flower-1 {
+          left: auto;
+          right: 0;
+          top: 0;
+          transform-origin: center;
+          transform: translateY(-50%) translateX(-20%) rotate(194deg); } }
+    .art-design-section .container .flower-2 {
+      display: none; }
+      @media (min-width: 920px) {
+        .art-design-section .container .flower-2 {
+          left: 0;
+          top: 0;
+          transform: translateY(80%);
+          display: block; } }
   .art-design-section .icon {
     border-color: #6289AA; }
   .art-design-section .swiper-pagination-bullet {
     background-color: #F8F4EE;
     width: 16px;
     height: 16px;
-    margin-right: 5px; }
-    .art-design-section .swiper-pagination-bullet.active {
-      background-color: #6289AA; }
+    margin-right: 5px;
+    display: inline-block;
+    position: relative;
+    opacity: 0.2;
+    border: solid 4px #161B1F;
+    transition: all 0.4s; }
+  .art-design-section .swiper-pagination-bullet-active {
+    background-color: #6289AA;
+    border: solid 1px #6289AA;
+    opacity: 1; }
+
+.location {
+  border-top: solid 1px #6289AA;
+  padding-top: 60px;
+  position: relative; }
+  .location .bg {
+    position: absolute;
+    z-index: 0;
+    background-image: url("https://www.stage72.info/crossing-collection/repo/greca2.png");
+    width: 50%;
+    height: 100%;
+    right: -15px;
+    top: 40px; }
+  @media (min-width: 920px) {
+    .location {
+      border-top: none;
+      overflow: hidden; }
+      .location .bg {
+        position: absolute;
+        z-index: 0;
+        background-image: url("https://www.stage72.info/crossing-collection/repo/greca2.png");
+        background-size: contain;
+        width: 40%;
+        height: 100%;
+        right: 30%;
+        top: 00px; } }
 
 .scroll-gallery {
   margin: 0 -15px;
@@ -5650,12 +5743,15 @@ img {
   .scroll-gallery .content {
     display: flex;
     padding: 0 7.5px 15px; }
-    .scroll-gallery .content > picture, .scroll-gallery .content .art-slide-sm {
-      flex: 0 0 75vw;
-      max-width: 75vw;
+    .scroll-gallery .content .art-slide-sm {
+      flex: 0;
       padding: 0 7.5px; }
-      .scroll-gallery .content > picture picture, .scroll-gallery .content .art-slide-sm picture {
+      .scroll-gallery .content .art-slide-sm picture {
         padding: 0; }
+      .scroll-gallery .content .art-slide-sm img {
+        height: 75vw;
+        width: auto;
+        max-width: none; }
     .scroll-gallery .content img {
       width: 100%;
       height: auto; }

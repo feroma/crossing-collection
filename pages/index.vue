@@ -59,11 +59,11 @@
 
           <picture>
             <source
-              srcset="https://picsum.photos/1080/1920?random=1"
+              srcset="https://www.stage72.info/crossing-collection/repo/sm/JPEG/collection_01.jpg"
               media="(max-width: 768px)"
             >
             <img
-              src="https://picsum.photos/1920/1080?random=1"
+              src="https://www.stage72.info/crossing-collection/repo/lg/JPEG/collection_01.jpg"
               alt="Welcome to Crossing Collection"
               class="fullimage"
               loading="lazy"

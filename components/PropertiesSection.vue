@@ -19,7 +19,7 @@
 
 
       <!-- Locations Gallery -->
-      <div class="locations-container d-block d-sm-none">
+      <div class="locations-container d-block d-md-none">
         <LocationGallerySm
           v-for="(location, index) in allLocations"
           :key="location.name"
@@ -27,7 +27,7 @@
           :index="index"
         />
       </div>
-      <div class="locations-container d-none d-sm-block">
+      <div class="locations-container d-none d-md-block">
         <LocationGallery
           v-for="(location, index) in allLocations"
           :key="location.name"

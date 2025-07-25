@@ -21,8 +21,15 @@
                   <div class="staff-member">
                     <p class="staff-description t5">{{ person.description }}</p>
                     <div class="staff-header">
-                      <h3 class="staff-name serif text-italic mb-0">{{ person.name }}</h3>
-                      <p class="staff-role">{{ person.role }}</p>
+                      <img
+                        :src="person.icon"
+                        class="icon"
+                      />
+                      <div>
+                        <h3 class="t3 staff-name serif text-italic mb-1">{{ person.name }}</h3>
+                        <p class="staff-role">{{ person.role }}</p>
+                      </div>
+
                     </div>
                   </div>
                 </swiper-slide>
@@ -54,8 +61,15 @@
                   <div class="staff-member">
                     <p class="staff-description t5">{{ person.description }}</p>
                     <div class="staff-header">
-                      <h3 class="staff-name serif text-italic mb-0">{{ person.name }}</h3>
-                      <p class="staff-role">{{ person.role }}</p>
+                      <img
+                        :src="person.icon"
+                        class="icon"
+                      />
+                      <div>
+                        <h3 class="staff-name serif text-italic mb-0">{{ person.name }}</h3>
+                        <p class="staff-role">{{ person.role }}</p>
+                      </div>
+
                     </div>
                   </div>
                 </div>
@@ -116,7 +130,7 @@ export default {
             centeredSlides: true,
           },
           // Tablet - auto width con larghezza minima
-          768: {
+          1024: {
             slidesPerView: 'auto',
             spaceBetween: 30,
             centeredSlides: true,
