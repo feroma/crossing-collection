@@ -5247,6 +5247,10 @@ a.text-dark:hover, a.text-dark:focus {
     .t3b {
       font-size: 30px;
       line-height: 1.2; } }
+  @media (min-width: 1360px) {
+    .t3b {
+      font-size: 40px;
+      line-height: 1.2; } }
   @media (min-width: 1920px) {
     .t3b {
       font-size: 50px;
@@ -5520,9 +5524,15 @@ img {
     height: 100%;
     display: flex;
     padding: 70px 15px;
-    align-items: start; }
+    align-items: start;
+    justify-content: center; }
     .welcome-section .section-title span {
-      display: block; }
+      display: block;
+      text-align: center; }
+    @media (max-width: 919.98px) {
+      .welcome-section .section-title span em {
+        display: block;
+        text-align: center; } }
     @media (min-width: 920px) {
       .welcome-section .section-title {
         align-items: center;
@@ -5554,6 +5564,20 @@ img {
  */
 .concept-section .roundimage {
   border-radius: 250px; }
+@media (min-width: 1360px) {
+  .concept-section .pt-title {
+    padding-top: 60px; }
+  .concept-section .title-part {
+    display: block; }
+  .concept-section .title-part-1 {
+    transform: translateX(-8.3333333333vw); }
+  .concept-section .title-part-4, .concept-section .title-part-5 {
+    transform: translateX(8.3333333333vw); }
+  .concept-section .body {
+    padding-left: 4.1666666667vw; } }
+@media (min-width: 1360px) {
+  .concept-section .pt-title {
+    padding-top: 70px; } }
 
 .discover {
   padding: 60px 0; }

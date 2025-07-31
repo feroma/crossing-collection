@@ -336,18 +336,27 @@ img {
     display: flex;
     padding: 70px 15px;
     align-items: start;
+    justify-content: center;
 
     span {
       display: block;
-
+      text-align: center;
     }
-
+    @include media-breakpoint-down(sm) {
+      span {
+        em{
+          display: block;
+          text-align: center;
+        }
+      }
+    }
     @include media-breakpoint-up(md) {
       align-items: center;
       justify-content: center;
       span {
         display: block;
         text-align: center;
+
       }
     }
   }
@@ -391,6 +400,31 @@ img {
   .roundimage {
     border-radius: 250px;
   }
+
+  @include media-breakpoint-up(lg) {
+    .pt-title{
+      padding-top: 60px;
+    }
+    .title-part{
+        display: block;
+    }
+
+    .title-part-1{
+      transform: translateX(-$column-width);
+    }
+    .title-part-4, .title-part-5{
+      transform: translateX($column-width);
+    }
+    .body{
+      padding-left: $column-width/2;
+    }
+  }
+  @include media-breakpoint-up(lg) {
+    .pt-title{
+      padding-top: 70px;
+    }
+  }
+
 }
 
 .discover {

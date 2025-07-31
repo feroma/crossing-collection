@@ -151,7 +151,7 @@ export default {
       this.$nextTick(() => {
         setTimeout(() => {
           this.initSwiper()
-        }, 2000)
+        }, 3000)
       })
     })
   },
