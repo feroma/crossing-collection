@@ -67,7 +67,18 @@
     line-height: 1;
   }
 }
-
+.t3b{
+  font-size: 20px;
+  line-height: 1.2;
+  @include media-breakpoint-up(md) {
+    font-size: 30px;
+    line-height: 1.2;
+  }
+  @include media-breakpoint-up(xl) {
+    font-size: 50px;
+    line-height: 1.2;
+  }
+}
 .t4{
   font-size: 20px;
   @include media-breakpoint-up(md) {

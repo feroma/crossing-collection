@@ -17,9 +17,9 @@
           </picture>
 
         </div>
-        <div class="col-sm-5 col-md-4">
+        <div class="col-sm-5 col-md-4 col-lg-5">
 
-          <h3 v-if="data.summary" class="summary serif" v-html="data.summary"></h3>
+          <h3 v-if="data.summary" class="summary t3b serif" v-html="data.summary"></h3>
           <div class="body" v-html="data.body"></div>
 
         </div>
