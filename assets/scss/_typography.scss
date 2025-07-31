@@ -60,15 +60,16 @@
   }
 }
 .t3{
-  font-size: 20px;
+  font-size: 26px;
   line-height: 1.2;
   @include media-breakpoint-up(md) {
     font-size: 30px;
     line-height: 1;
   }
 }
+
 .t3b{
-  font-size: 20px;
+  font-size: 26px;
   line-height: 1.2;
   @include media-breakpoint-up(md) {
     font-size: 30px;
@@ -116,6 +117,9 @@
 h1, h2 {
    font-family: $font-family-headings;
    font-weight: 300;
+}
+h3, .h3{
+  @extend .t3;
 }
 .serif {
   font-family: $font-family-headings!important;

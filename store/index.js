@@ -124,6 +124,58 @@ export const state = () => ({
     }
   ],
 
+  press: [
+    {
+      name: "Condé Nast Traveller",
+      logo: "https://www.stage72.info/crossing-collection/repo/press/logo/traveller_thumbnail_1.png",
+      artcile: "https://www.stage72.info/crossing-collection/repo/press/articles/01_travellers_2.jpg"
+    },
+    {
+      name: "Louis Vuitton City Guide",
+      logo: "https://www.stage72.info/crossing-collection/repo/press/logo/louisvuitton_guide_thumb.png",
+      artcile: "https://www.stage72.info/crossing-collection/repo/press/articles/02_louis-vuitton_guide_cover.jpg"
+    },
+    {
+      name: "Livingetc",
+      logo: "https://www.stage72.info/crossing-collection/repo/press/logo/liveingetc_thumb.png",
+      artcile: "https://www.stage72.info/crossing-collection/repo/press/articles/03_livingetc-features-best-milan-hotels.jpg"
+    },
+    {
+      name: "ELLE Traveller",
+      logo: "https://www.stage72.info/crossing-collection/repo/press/logo/elle_deco_thumb.png",
+      artcile: "https://www.stage72.info/crossing-collection/repo/press/articles/04_elle_traveller.jpg"
+    },
+    {
+      name: "VOGUE",
+      logo: "https://www.stage72.info/crossing-collection/repo/press/logo/vogue2_thumb.png",
+      artcile: "https://www.stage72.info/crossing-collection/repo/press/articles/05_vogue_2_milan.jpg"
+    },
+    {
+      name: "NATIONAL GEOGRAPHIC TRAVELER",
+      logo: "https://www.stage72.info/crossing-collection/repo/press/logo/national_geographic_thumb.png",
+      artcile: "https://www.stage72.info/crossing-collection/repo/press/articles/06_traveler-paris_cover.jpg"
+    },
+    {
+      name: "DEPARTURES",
+      logo: "https://www.stage72.info/crossing-collection/repo/press/logo/departures_thumb.png",
+      artcile: "https://www.stage72.info/crossing-collection/repo/press/articles/07_departures-mediterraneo_cover.jpg"
+    },
+    {
+      name: "The Sunday Times Travel",
+      logo: "https://www.stage72.info/crossing-collection/repo/press/logo/travel_the_sunday_times_thumb.png",
+      artcile: "https://www.stage72.info/crossing-collection/repo/press/articles/07b_sundaytimes.jpg"
+    },
+    {
+      name: "Sherman's TRAVEL",
+      logo: "https://www.stage72.info/crossing-collection/repo/press/logo/sherman's travel thumb.png",
+      artcile: "https://www.stage72.info/crossing-collection/repo/press/articles/08_sherman_travel.jpg"
+    },
+    {
+      name: "The Telegraph",
+      logo: "https://www.stage72.info/crossing-collection/repo/press/logo/telegraph_thumb_0.png",
+      artcile: "https://www.stage72.info/crossing-collection/repo/press/articles/09_sundaytelegraph2_cover.jpg"
+    }
+  ],
   // Array delle locations/proprietà
   locations: [
     {
@@ -357,7 +409,7 @@ export const state = () => ({
       order: 1,
       content: {
         _title: 'Concept',
-        summary: 'A stay with Crossing*is all about relaxing *<em>into the comfort of elegance, </em>*<em>design</em> and assiduous *concierge service *to elevate each day.',
+        summary: 'A stay with Crossing&nbsp;*is all about relaxing&nbsp;*<em>into the comfort of elegance,&nbsp;</em>*<em>design</em> and assiduous&nbsp;*concierge service&nbsp;*to elevate each day.',
         body: 'Crossing Collection is an Italian boutique property group with two accommodations in Milan and Rome, a luxury villa in Sicily and a premium yachting holiday experience with routes in Greece and Italy. Our enterprise is the result of a lifetime passion for iconic design, contemporary art, and an eternal wanderlust fuelling a curiosity and passion to meet and host cosmopolitan travellers from all over the world.'
       }
     },
@@ -714,7 +766,7 @@ export const state = () => ({
             name: 'Alfio',
             role: 'Owner',
             icon: 'https://www.stage72.info/crossing-collection/repo/icon_06.png',
-            description: 'Alfio and Carlotta and are the visionary owners behind Crossing Collection. Alfio, a proud Sicilian, is the perfect host. His warmth and hospitality can be felt wherever you stay - at their boutique city properties, villa, or the yacht. His love for both the familiar and the unknown shapes the Crossing Collection offering, making each stay a journey in itself. He is the brain behind the books, he takes care of the finance, accounting and administration of each property and the group as a whole. It is thanks to his business acumen and finesse that the group has grown into the collection of properties and holiday experiences that it is today.'
+            description: 'Alfio and Carlotta are the visionary owners behind Crossing Collection. Alfio, a proud Sicilian, is the perfect host. His warmth and hospitality can be felt wherever you stay - at their boutique city properties, villa, or the yacht. His love for both the familiar and the unknown shapes the Crossing Collection offering, making each stay a journey in itself. He is the brain behind the books, he takes care of the finance, accounting and administration of each property and the group as a whole. It is thanks to his business acumen and finesse that the group has grown into the collection of properties and holiday experiences that it is today.'
           },
           {
             name: 'Carlotta',
@@ -792,7 +844,8 @@ export const state = () => ({
             name: 'Emanuele',
             role: 'Skipper - Captain, Crossing the Sea',
             icon: 'https://www.stage72.info/crossing-collection/repo/icon_05.png',
-            description: 'Emanuele is the skipper and captain of our boutique yacht holiday at Crossing the Sea, tasked with making every journey safe, enjoyable, and unforgettable. With decades of competitive sailing and ocean crossings under his belt, Emanuele\'s skill on the water is exceptional. Always cautious and meticulous, he studies the winds and sea conditions before setting sail, devising routes to guarantee the utmost safety and comfort for guests. Beyond his technical expertise, Emanuele\'s creativity shines when it comes to guest enjoyment. When the kids\' club is not in session, he takes time to engage with younger guests, crafting treasure maps and organising Robinson Crusoe-style picnics on land, turning each day on board into a thrilling adventure. He brings the perfect blend of adventure, skill, and care.'
+            description: 'Emanuele is the co-founder, skipper and captain of our boutique yacht holiday at Crossing the Sea, tasked with making every journey safe, enjoyable, and unforgettable. With decades of competitive sailing and ocean crossings under his belt, Emanuele\'s skill on the water is exceptional. Always cautious and meticulous, he studies the winds and sea conditions before setting sail,' +
+              ' devising routes to guarantee the utmost safety and comfort for guests. Beyond his technical expertise, Emanuele\'s creativity shines when it comes to guest enjoyment. When the kids\' club is not in session, he takes time to engage with younger guests, crafting treasure maps and organising Robinson Crusoe-style picnics on land, turning each day on board into a thrilling adventure. He brings the perfect blend of adventure, skill, and care.'
           },
           {
             name: 'Francesca',
@@ -801,6 +854,16 @@ export const state = () => ({
             description: 'Francesca has been part of the Crossing the Sea team since our very first voyage in 2017. A true gem aboard, she keeps everything spotless, from the cabins to the bathrooms. Every space feels fresh and welcoming. But Francesca\'s talents go far beyond cleaning---she\'s a culinary magician, preparing divine breakfasts, lunches, aperitifs, and dinners with a flair for Mediterranean cuisine. Drawing inspiration from local ingredients found across the islands, her dishes bring a taste of the region\'s finest flavours directly to the table.'
           }
         ]
+      }
+    },
+    {
+      id: 'press',
+      name: 'Press Section',
+      type: 'press',
+      visible: true,
+      order: 5,
+      content: {
+        title: 'WHAT SAY ABOUT US',
       }
     },
     {
@@ -899,5 +962,7 @@ export const getters = {
     .sort((a, b) => a.order - b.order),
 
   getSectionById: state => id => state.sections.find(section => section.id === id),
-  getSectionsByType: state => type => state.sections.filter(section => section.type === type)
+  getSectionsByType: state => type => state.sections.filter(section => section.type === type),
+
+  allPress: state => state.press,
 }

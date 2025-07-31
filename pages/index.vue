@@ -32,8 +32,8 @@
               Art & Design
             </a>
             <a
-              href="#partners"
-              @click="scrollToSection('partners', $event)"
+              href="#press"
+              @click="scrollToSection('press', $event)"
               class="nav-link">
               Media & Partners
             </a>
@@ -105,6 +105,10 @@
         v-if="getSection('team')"
         :data="getSection('team').content"
       />
+      <PressSection
+        v-if="getSection('press')"
+        :data="getSection('press').content"
+      />
       <PartnersSection v-if="getSection('partners')"
                        :data="getSection('partners').content"/>
     </main>
@@ -137,8 +141,8 @@
                 Art & Design
               </a>
               <a
-                href="#partners"
-                @click="scrollToSection('partners', $event)"
+                href="#press"
+                @click="scrollToSection('press', $event)"
                 class="nav-link">
                 Media & Partners
               </a>
