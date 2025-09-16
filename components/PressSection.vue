@@ -1,12 +1,97 @@
 <template>
-  <section id="press" class="press-section no-min-h p-0">
+  <section id="press" class="press-section no-min-h">
+    <div class="container bg-yellow">
+      <div class="rounded-box">
+        <h2 class="section-title d-block text-center sans tbase text-uppercase _border-title"
+            v-html="data.title"/>
+
+        <!-- Press Carousel -->
+        <div class="press-carousel-container">
+          <client-only>
+            <template>
+              <div v-if="mounted">
+                <swiper
+                  :options="swiperOptions"
+                  class="press-carousel"
+                  ref="pressSwiper"
+                >
+                  <swiper-slide
+                    v-for="(publication, index) in pressPublications"
+                    :key="publication.name + index"
+                    class="press-slide"
+                  >
+                    <div class="press-link" style="cursor: pointer"
+                         :data-article-id="index"
+                         @click.stop="openPressModal(index)">
+                      <img
+                        :src="publication.logo"
+                        :alt="publication.name"
+                        :title="publication.name"
+                        class="press-logo"
+                      />
+                    </div>
+                  </swiper-slide>
+                </swiper>
+
+                <!-- Navigation Arrows -->
+                <div class="press-carousel-prev carousel-arrow carousel-arrow-prev arrow-link">
+                <span class="icon">
+                   <arrow-left/>
+                </span>
+                </div>
+                <div class="press-carousel-next carousel-arrow carousel-arrow-next arrow-link">
+                 <span class="icon">
+                    <arrow-right/>
+                 </span>
+                </div>
+              </div>
+            </template>
+
+            <!-- Placeholder durante il loading -->
+            <template #placeholder>
+              <div class="press-placeholder">
+                <div class="placeholder-slides">
+                  <div
+                    v-for="(publication, index) in pressPublications.slice(0, 3)"
+                    :key="'placeholder-' + index"
+                    class="placeholder-slide press-slide"
+                  >
+                    <div class="press-link">
+                      <img
+                        :src="publication.logo"
+                        :alt="publication.name"
+                        :title="publication.name"
+                        class="press-logo"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Placeholder arrows -->
+                <div class="press-carousel-prev carousel-arrow carousel-arrow-prev arrow-link placeholder-arrow">
+                <span class="icon">
+                   <arrow-left/>
+                </span>
+                </div>
+                <div class="press-carousel-next carousel-arrow carousel-arrow-next arrow-link placeholder-arrow">
+                 <span class="icon">
+                    <arrow-right/>
+                 </span>
+                </div>
+              </div>
+            </template>
+          </client-only>
+        </div>
+      </div>
+
+    </div>
   </section>
 </template>
 
 <script>
 import ArrowLeft from "~/components/ArrowLeft.vue"
 import ArrowRight from "~/components/ArrowRight.vue"
-
+import { mapGetters, mapActions } from 'vuex'
 export default {
   name: 'PressSection',
   components: {
@@ -20,10 +105,37 @@ export default {
     }
   },
   computed: {
+    ...mapGetters([
+      'isModalOpen',
+    ]),
     pressPublications() {
       return this.$store.getters.allPress
     }
   },
+  methods: {
+    ...mapActions([
+      'openModal','setModalArticle',
+    ]),
+
+    openPressModal(index) {
+      console.log(this.pressPublications[index]);
+      this.setModalArticle(this.pressPublications[index])
+      this.$nextTick(() => {
+        setTimeout(() => {
+          this.openModal()
+        }, 100)
+      })
+    },
+    initSwiper() {
+      if (this.$refs.pressSwiper && this.$refs.pressSwiper.$swiper) {
+        console.log('Press Swiper initialized and updated')
+        this.$refs.pressSwiper.$swiper.update()
+        // Forza l'aggiornamento della navigazione
+        this.$refs.pressSwiper.$swiper.navigation.update()
+      }
+    }
+  },
+
   data() {
     return {
       mounted: false,
@@ -57,7 +169,6 @@ export default {
     // Aspetta che il DOM sia completamente pronto
     this.$nextTick(() => {
       this.mounted = true
-
       // Aspetta che lo swiper sia renderizzato
       this.$nextTick(() => {
         setTimeout(() => {
@@ -66,16 +177,7 @@ export default {
       })
     })
   },
-  methods: {
-    initSwiper() {
-      if (this.$refs.pressSwiper && this.$refs.pressSwiper.$swiper) {
-        console.log('Press Swiper initialized and updated')
-        this.$refs.pressSwiper.$swiper.update()
-        // Forza l'aggiornamento della navigazione
-        this.$refs.pressSwiper.$swiper.navigation.update()
-      }
-    }
-  }
+
 }
 </script>
 

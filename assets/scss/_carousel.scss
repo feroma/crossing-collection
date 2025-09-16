@@ -4,7 +4,7 @@ $slide_width_md: 40vw;
 
 .team-carousel {
   @include media-breakpoint-up(md) {
-    &:before{
+    &:before {
       content: '';
       position: absolute;
       left: -1px;
@@ -14,7 +14,7 @@ $slide_width_md: 40vw;
       z-index: 50;
       background: linear-gradient(90deg, rgba($yellow, 1) 1%, rgba($yellow, 0) 100%);
     }
-    &:after{
+    &:after {
       content: '';
       position: absolute;
       right: -1px;
@@ -27,9 +27,10 @@ $slide_width_md: 40vw;
   }
 
 
-  .swiper-wrapper{
+  .swiper-wrapper {
     align-items: center;
   }
+
   .swiper-slide {
     opacity: 0.5;
     transition: opacity 0.3s ease, transform 0.3s ease;
@@ -91,24 +92,54 @@ $slide_width_md: 40vw;
   }
 
 
-
-
   &-prev {
     left: 5px;
     @include media-breakpoint-up(md) {
       left: 50%;
-      transform: translateX( calc(-20vw - 60%) ) translateY(-50%);
+      transform: translateX(calc(-20vw - 60%)) translateY(-50%);
     }
   }
+
   &-next {
     right: -5px;
     @include media-breakpoint-up(md) {
       right: 50%;
-      transform: translateX( calc(20vw + 80%)) translateY(-50%);
+      transform: translateX(calc(20vw + 80%)) translateY(-50%);
     }
   }
 }
+.press-carousel-container{
+  .carousel-arrow {
+    position: absolute;
+    top: 100%;
 
+    z-index: 100;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    .icon {
+      border: none!important;
+      //border-color: $yellow !important;
+      //opacity: 1 !important;
+    }
+
+    path, line {
+      stroke: $yellow !important;
+    }
+
+
+    &-prev {
+      left: 50%;
+      transform: translateX(-100%);
+    }
+
+    &-next {
+      right: 50%;
+      left: auto;
+      transform: translateX(100%);
+    }
+  }
+}
 // Staff member styling
 .staff-member {
 
@@ -122,11 +153,11 @@ $slide_width_md: 40vw;
   }
   transition: transform 0.3s ease;
 
-  .staff-header{
+  .staff-header {
     display: flex;
     align-items: center;
 
-    .icon{
+    .icon {
       height: auto;
       width: 80px;
       flex: 0;

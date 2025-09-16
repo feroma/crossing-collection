@@ -40,9 +40,9 @@
           </div>
         </div>
 
-        <MenuIcon @click.native="toggleLocationsModal"
-                  :class="isLocationsModalOpen?'is-open':''"
-                  :is-open="isLocationsModalOpen"/>
+        <MenuIcon @click.native="menuIconAction"
+                  :class="isLocationsModalOpen || isModalOpen?'is-open':''"
+                  :is-open="isLocationsModalOpen || isModalOpen"/>
       </div>
     </header>
 
@@ -109,9 +109,12 @@
         v-if="getSection('press')"
         :data="getSection('press').content"
       />
+      <press-modal/>
       <PartnersSection v-if="getSection('partners')"
                        :data="getSection('partners').content"/>
+
     </main>
+
 
     <!-- Footer -->
     <footer class="footer bg-teal text-gray_light">
@@ -201,9 +204,11 @@ import PartnersSection from "~/components/PartnersSection.vue"
 import ArrowRight from "~/components/ArrowRight.vue"
 import ElementCrossing from "~/components/ElementCrossing.vue"
 import ElementCollection from "~/components/ElementCollection.vue"
-
+import PressModal from "~/components/PressModal.vue"
+import PressSection from "~/components/PressSection.vue"
 export default {
   components: {
+    PressModal,
     ElementCollection,
     ElementCrossing,
     ArrowRight,
@@ -215,22 +220,38 @@ export default {
     ArtDesignSection,
     TeamSection,
     LocationsModal,
-    MenuIcon
+    MenuIcon,
+    PressSection
   },
 
   computed: {
     ...mapGetters([
       'siteConfig',
       'getSectionById',
-      'isLocationsModalOpen', 'allLocationsList'
+      'isLocationsModalOpen',
+      'isModalOpen',
+      'allLocationsList'
     ])
   },
 
   methods: {
     ...mapActions([
       'openLocationsModal',
-      'toggleLocationsModal'
+      'toggleLocationsModal',
+      'openModal',
+      'toggleModal',
+      'closeModal'
     ]),
+    menuIconAction() {
+      console.log("close location:"+this.isLocationsModalOpen)
+      console.log("close press:"+this.isModalOpen)
+
+      if(this.isModalOpen){
+        this.closeModal()
+      }else{
+        this.toggleLocationsModal()
+      }
+    },
 
 
     scrollToSection (sectionId, event) {

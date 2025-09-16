@@ -28,7 +28,7 @@ export const state = () => ({
   // Stato dell'interfaccia utente
   modalOpen: false,
   locationsModalOpen: false,
-
+  pressArticleSelected:false,
   // Array dei partner
 // Array dei partner
   partners: [
@@ -128,52 +128,52 @@ export const state = () => ({
     {
       name: "Condé Nast Traveller",
       logo: "https://www.stage72.info/crossing-collection/repo/press/logo/traveller_thumbnail_1.png",
-      artcile: "https://www.stage72.info/crossing-collection/repo/press/articles/01_travellers_2.jpg"
+      article: "https://www.stage72.info/crossing-collection/repo/press/articles/01_travellers_2.jpg"
     },
     {
       name: "Louis Vuitton City Guide",
       logo: "https://www.stage72.info/crossing-collection/repo/press/logo/louisvuitton_guide_thumb.png",
-      artcile: "https://www.stage72.info/crossing-collection/repo/press/articles/02_louis-vuitton_guide_cover.jpg"
+      article: "https://www.stage72.info/crossing-collection/repo/press/articles/02_louis-vuitton_guide_cover.jpg"
     },
     {
       name: "Livingetc",
       logo: "https://www.stage72.info/crossing-collection/repo/press/logo/liveingetc_thumb.png",
-      artcile: "https://www.stage72.info/crossing-collection/repo/press/articles/03_livingetc-features-best-milan-hotels.jpg"
+      article: "https://www.stage72.info/crossing-collection/repo/press/articles/03_livingetc-features-best-milan-hotels.jpg"
     },
     {
       name: "ELLE Traveller",
       logo: "https://www.stage72.info/crossing-collection/repo/press/logo/elle_deco_thumb.png",
-      artcile: "https://www.stage72.info/crossing-collection/repo/press/articles/04_elle_traveller.jpg"
+      article: "https://www.stage72.info/crossing-collection/repo/press/articles/04_elle_traveller.jpg"
     },
     {
       name: "VOGUE",
       logo: "https://www.stage72.info/crossing-collection/repo/press/logo/vogue2_thumb.png",
-      artcile: "https://www.stage72.info/crossing-collection/repo/press/articles/05_vogue_2_milan.jpg"
+      article: "https://www.stage72.info/crossing-collection/repo/press/articles/05_vogue_2_milan.jpg"
     },
     {
       name: "NATIONAL GEOGRAPHIC TRAVELER",
       logo: "https://www.stage72.info/crossing-collection/repo/press/logo/national_geographic_thumb.png",
-      artcile: "https://www.stage72.info/crossing-collection/repo/press/articles/06_traveler-paris_cover.jpg"
+      article: "https://www.stage72.info/crossing-collection/repo/press/articles/06_traveler-paris_cover.jpg"
     },
     {
       name: "DEPARTURES",
       logo: "https://www.stage72.info/crossing-collection/repo/press/logo/departures_thumb.png",
-      artcile: "https://www.stage72.info/crossing-collection/repo/press/articles/07_departures-mediterraneo_cover.jpg"
+      article: "https://www.stage72.info/crossing-collection/repo/press/articles/07_departures-mediterraneo_cover.jpg"
     },
     {
       name: "The Sunday Times Travel",
       logo: "https://www.stage72.info/crossing-collection/repo/press/logo/travel_the_sunday_times_thumb.png",
-      artcile: "https://www.stage72.info/crossing-collection/repo/press/articles/07b_sundaytimes.jpg"
+      article: "https://www.stage72.info/crossing-collection/repo/press/articles/07b_sundaytimes.jpg"
     },
     {
       name: "Sherman's TRAVEL",
       logo: "https://www.stage72.info/crossing-collection/repo/press/logo/sherman's travel thumb.png",
-      artcile: "https://www.stage72.info/crossing-collection/repo/press/articles/08_sherman_travel.jpg"
+      article: "https://www.stage72.info/crossing-collection/repo/press/articles/08_sherman_travel.jpg"
     },
     {
       name: "The Telegraph",
       logo: "https://www.stage72.info/crossing-collection/repo/press/logo/telegraph_thumb_0.png",
-      artcile: "https://www.stage72.info/crossing-collection/repo/press/articles/09_sundaytelegraph2_cover.jpg"
+      article: "https://www.stage72.info/crossing-collection/repo/press/articles/09_sundaytelegraph2_cover.jpg"
     }
   ],
   // Array delle locations/proprietà
@@ -888,7 +888,9 @@ export const mutations = {
   TOGGLE_MODAL (state) {
     state.modalOpen = !state.modalOpen
   },
-
+  SET_MODAL_ARTICLE (state, article) {
+    state.pressArticleSelected = article
+  },
   // Mutations per il modal delle locations
   SET_LOCATIONS_MODAL_OPEN (state, isOpen) {
     state.locationsModalOpen = isOpen
@@ -907,12 +909,15 @@ export const actions = {
 
   closeModal ({commit}) {
     commit('SET_MODAL_OPEN', false)
+    commit('SET_MODAL_ARTICLE', false)
   },
 
   toggleModal ({commit}) {
     commit('TOGGLE_MODAL')
   },
-
+  setModalArticle ({commit}, article) {
+    commit('SET_MODAL_ARTICLE', article)
+  },
   // Actions per il modal delle locations
   openLocationsModal ({commit}) {
     commit('SET_LOCATIONS_MODAL_OPEN', true)
@@ -924,6 +929,7 @@ export const actions = {
 
   toggleLocationsModal ({commit}) {
     commit('TOGGLE_LOCATIONS_MODAL')
+
   }
 }
 
@@ -965,4 +971,5 @@ export const getters = {
   getSectionsByType: state => type => state.sections.filter(section => section.type === type),
 
   allPress: state => state.press,
+  getPressArticleSelected: state => state.pressArticleSelected,
 }

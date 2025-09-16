@@ -201,12 +201,29 @@ body.modal-open {
   background-color: $gray_darker;
   @extend .header-padding;
   color: $yellow;
+  left: 0;
+  top: 0;
 
   .modal-title {
     display: block;
     text-align: center;
     margin-bottom: 30px;
     @extend .t1;
+  }
+}
+
+#press-modal{
+  .modal-content{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .modal-scroll{
+    max-width: 80vw;
+  }
+  img{
+    width: 100%;
+    height: auto;
   }
 }
 
@@ -916,6 +933,9 @@ img {
     //}
 
   }
+}
+.press-carousel-container{
+  position: relative;
 }
 
 /**
