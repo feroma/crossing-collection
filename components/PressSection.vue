@@ -20,16 +20,17 @@
                     :key="publication.name + index"
                     class="press-slide"
                   >
-                    <div class="press-link" style="cursor: pointer"
-                         :data-article-id="index"
-                         @click.stop="openPressModal(index)">
+                    <!-- Rimosso @click.stop="openPressModal(index)" -->
+                    <a :href="publication.article" class="press-link" style="cursor: pointer"
+                       :data-article-id="index">
                       <img
+                        :data-article-id="index"
                         :src="publication.logo"
                         :alt="publication.name"
                         :title="publication.name"
                         class="press-logo"
                       />
-                    </div>
+                    </a>
                   </swiper-slide>
                 </swiper>
 
@@ -92,6 +93,7 @@
 import ArrowLeft from "~/components/ArrowLeft.vue"
 import ArrowRight from "~/components/ArrowRight.vue"
 import { mapGetters, mapActions } from 'vuex'
+
 export default {
   name: 'PressSection',
   components: {
@@ -118,27 +120,110 @@ export default {
     ]),
 
     openPressModal(index) {
-      console.log(this.pressPublications[index]);
-      this.setModalArticle(this.pressPublications[index])
+      console.log('Opening modal for index:', index);
+      console.log('Article object:', this.pressPublications[index]);
+
+      this.setModalArticle(this.pressPublications[index]);
+
       this.$nextTick(() => {
         setTimeout(() => {
           this.openModal()
         }, 100)
       })
     },
+
     initSwiper() {
       if (this.$refs.pressSwiper && this.$refs.pressSwiper.$swiper) {
         console.log('Press Swiper initialized and updated')
         this.$refs.pressSwiper.$swiper.update()
-        // Forza l'aggiornamento della navigazione
         this.$refs.pressSwiper.$swiper.navigation.update()
+
+        // Aggiungi i click handlers dopo l'inizializzazione
+        setTimeout(() => {
+          this.attachClickHandlers()
+        }, 200) // Aspetta un po' per essere sicuri che tutto sia renderizzato
       }
+    },
+
+    attachClickHandlers() {
+      // Rimuovi eventuali listener precedenti per evitare duplicati
+      this.removeClickHandlers()
+
+      const swiperContainer = this.$refs.pressSwiper?.$el
+      if (!swiperContainer) {
+        console.warn('Swiper container not found')
+        return
+      }
+
+      // METODO 1: Event Delegation (RACCOMANDATO)
+      this.clickHandler = (event) => {
+        const pressLink = event.target.closest('.press-link')
+        if (pressLink) {
+          event.preventDefault() // Previeni la navigazione del link
+
+          const articleId = pressLink.getAttribute('data-article-id')
+          if (articleId !== null) {
+            const index = parseInt(articleId, 10)
+            console.log('Clicked on article with ID:', index)
+            this.openPressModal(index)
+          }
+        }
+      }
+
+      // Aggiungi l'event listener al contenitore swiper
+      swiperContainer.addEventListener('click', this.clickHandler)
+      console.log('Click handlers attached to swiper container')
+
+      // METODO 2: Listener individuali (ALTERNATIVO)
+      // Decommentare questo blocco se preferisci listener individuali
+      /*
+      const pressLinks = swiperContainer.querySelectorAll('.press-link')
+      console.log('Found press links:', pressLinks.length)
+
+      pressLinks.forEach((link) => {
+        const articleId = link.getAttribute('data-article-id')
+        if (articleId !== null) {
+          const index = parseInt(articleId, 10)
+
+          const clickHandler = (event) => {
+            event.preventDefault()
+            console.log('Individual click handler for index:', index)
+            this.openPressModal(index)
+          }
+
+          link.addEventListener('click', clickHandler)
+          // Salva il riferimento per rimuoverlo dopo
+          link._clickHandler = clickHandler
+        }
+      })
+      */
+    },
+
+    removeClickHandlers() {
+      const swiperContainer = this.$refs.pressSwiper?.$el
+      if (swiperContainer && this.clickHandler) {
+        swiperContainer.removeEventListener('click', this.clickHandler)
+        this.clickHandler = null
+        console.log('Previous click handlers removed')
+      }
+
+      // Se usi il METODO 2, decommentare questo:
+      /*
+      const pressLinks = swiperContainer?.querySelectorAll('.press-link') || []
+      pressLinks.forEach((link) => {
+        if (link._clickHandler) {
+          link.removeEventListener('click', link._clickHandler)
+          link._clickHandler = null
+        }
+      })
+      */
     }
   },
 
   data() {
     return {
       mounted: false,
+      clickHandler: null, // Riferimento al click handler per poterlo rimuovere
       swiperOptions: {
         slidesPerView: 'auto',
         spaceBetween: 30,
@@ -149,13 +234,11 @@ export default {
           prevEl: '.press-carousel-prev',
         },
         breakpoints: {
-          // Mobile - 1 logo principale + 50% di precedente e successivo
           320: {
             slidesPerView: 'auto',
             spaceBetween: 20,
             centeredSlides: true,
           },
-          // Tablet orizzontale - 3 loghi + 50% di precedente e successivo
           1024: {
             slidesPerView: 'auto',
             spaceBetween: 40,
@@ -165,11 +248,10 @@ export default {
       }
     }
   },
-  mounted () {
-    // Aspetta che il DOM sia completamente pronto
+
+  mounted() {
     this.$nextTick(() => {
       this.mounted = true
-      // Aspetta che lo swiper sia renderizzato
       this.$nextTick(() => {
         setTimeout(() => {
           this.initSwiper()
@@ -178,6 +260,10 @@ export default {
     })
   },
 
+  beforeDestroy() {
+    // Pulisci i listener quando il componente viene distrutto
+    this.removeClickHandlers()
+  }
 }
 </script>
 
@@ -205,28 +291,16 @@ export default {
   pointer-events: none;
 }
 
-/* Assicurati che lo swiper non causi problemi di layout */
-
-
 /* Stili per i slide della stampa */
-
-
-/* Mobile: 1 logo principale che occupa la maggior parte dello schermo */
 @media (max-width: 1023px) {
   .press-slide {
 
   }
 }
 
-/* Tablet e desktop: 3 loghi visibili */
 @media (min-width: 1024px) {
   .press-slide {
 
   }
 }
-
-
-
-
-
 </style>
