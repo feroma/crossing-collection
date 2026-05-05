@@ -28,6 +28,8 @@ export const state = () => ({
   // Stato dell'interfaccia utente
   modalOpen: false,
   locationsModalOpen: false,
+  companyModalOpen: false,
+  privacyModalOpen: false,
   pressArticleSelected:false,
   // Array dei partner
 // Array dei partner
@@ -898,6 +900,16 @@ export const mutations = {
 
   TOGGLE_LOCATIONS_MODAL (state) {
     state.locationsModalOpen = !state.locationsModalOpen
+  },
+
+  // Mutations per il modal company details
+  SET_COMPANY_MODAL_OPEN (state, isOpen) {
+    state.companyModalOpen = isOpen
+  },
+
+  // Mutations per il modal privacy
+  SET_PRIVACY_MODAL_OPEN (state, isOpen) {
+    state.privacyModalOpen = isOpen
   }
 }
 
@@ -930,6 +942,24 @@ export const actions = {
   toggleLocationsModal ({commit}) {
     commit('TOGGLE_LOCATIONS_MODAL')
 
+  },
+
+  // Actions per il modal company details
+  openCompanyModal ({commit}) {
+    commit('SET_COMPANY_MODAL_OPEN', true)
+  },
+
+  closeCompanyModal ({commit}) {
+    commit('SET_COMPANY_MODAL_OPEN', false)
+  },
+
+  // Actions per il modal privacy
+  openPrivacyModal ({commit}) {
+    commit('SET_PRIVACY_MODAL_OPEN', true)
+  },
+
+  closePrivacyModal ({commit}) {
+    commit('SET_PRIVACY_MODAL_OPEN', false)
   }
 }
 
@@ -943,6 +973,8 @@ export const getters = {
   // Getter per il modal
   isModalOpen: state => state.modalOpen,
   isLocationsModalOpen: state => state.locationsModalOpen,
+  isCompanyModalOpen: state => state.companyModalOpen,
+  isPrivacyModalOpen: state => state.privacyModalOpen,
 
   // Getters per i partners
   allPartners: state => state.partners,

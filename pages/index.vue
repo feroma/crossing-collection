@@ -41,14 +41,20 @@
         </div>
 
         <MenuIcon @click.native="menuIconAction"
-                  :class="isLocationsModalOpen || isModalOpen?'is-open':''"
-                  :is-open="isLocationsModalOpen || isModalOpen"/>
+                  :class="isAnyModalOpen?'is-open':''"
+                  :is-open="isAnyModalOpen"/>
       </div>
     </header>
 
 
     <!-- Modal delle locations -->
     <LocationsModal/>
+
+    <!-- Modal Company Details -->
+    <CompanyDetailsModal/>
+
+    <!-- Modal Privacy Policy -->
+    <PrivacyPolicyModal/>
 
     <!-- Contenuto principale -->
     <main>
@@ -171,7 +177,7 @@
               </a>
             </div>
 
-            <p class="text-gray">All rights reserved. &copy; 2026 {{ siteConfig.siteName }}. Company</p>
+            <p class="text-gray">All rights reserved. &copy; 2026 {{ siteConfig.siteName }}. <a href="#" class="footer-legal-link" @click.prevent="openCompanyModal">Company Details</a> · <a href="#" class="footer-legal-link" @click.prevent="openPrivacyModal">Privacy</a></p>
           </div>
           <div class="col-sm-6 pt-sm-3"></div>
           <div class="col-sm-6 pt-sm-3"></div>
@@ -206,9 +212,13 @@ import ElementCrossing from "~/components/ElementCrossing.vue"
 import ElementCollection from "~/components/ElementCollection.vue"
 import PressModal from "~/components/PressModal.vue"
 import PressSection from "~/components/PressSection.vue"
+import CompanyDetailsModal from "~/components/CompanyDetailsModal.vue"
+import PrivacyPolicyModal from "~/components/PrivacyModal.vue"
 export default {
   components: {
     PressModal,
+    CompanyDetailsModal,
+    PrivacyPolicyModal,
     ElementCollection,
     ElementCrossing,
     ArrowRight,
@@ -230,8 +240,13 @@ export default {
       'getSectionById',
       'isLocationsModalOpen',
       'isModalOpen',
+      'isCompanyModalOpen',
+      'isPrivacyModalOpen',
       'allLocationsList'
-    ])
+    ]),
+    isAnyModalOpen() {
+      return this.isLocationsModalOpen || this.isModalOpen || this.isCompanyModalOpen || this.isPrivacyModalOpen
+    }
   },
 
   methods: {
@@ -240,14 +255,19 @@ export default {
       'toggleLocationsModal',
       'openModal',
       'toggleModal',
-      'closeModal'
+      'closeModal',
+      'openCompanyModal',
+      'closeCompanyModal',
+      'openPrivacyModal',
+      'closePrivacyModal'
     ]),
     menuIconAction() {
-      console.log("close location:"+this.isLocationsModalOpen)
-      console.log("close press:"+this.isModalOpen)
-
       if(this.isModalOpen){
         this.closeModal()
+      }else if(this.isCompanyModalOpen){
+        this.closeCompanyModal()
+      }else if(this.isPrivacyModalOpen){
+        this.closePrivacyModal()
       }else{
         this.toggleLocationsModal()
       }

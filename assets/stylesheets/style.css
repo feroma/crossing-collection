@@ -5467,6 +5467,62 @@ body.modal-open {
   width: 100%;
   height: auto; }
 
+#company-modal .modal-content,
+#privacy-modal .modal-content {
+  width: 100%;
+  display: flex;
+  justify-content: center; }
+#company-modal .modal-scroll,
+#privacy-modal .modal-scroll {
+  max-width: 700px;
+  margin: 0 auto; }
+
+#company-modal .modal-title {
+  font-size: 30px;
+  margin-bottom: 20px; }
+#company-modal .company-details-list li {
+  padding: 8px 0;
+  font-size: 16px; }
+  #company-modal .company-details-list li strong {
+    color: #ffffff; }
+  #company-modal .company-details-list li span {
+    color: #9EA1A8; }
+
+#privacy-modal .privacy-content {
+  color: #e5e5e5; }
+  #privacy-modal .privacy-content h2 {
+    color: #F8F4EE;
+    font-size: 28px;
+    margin: 30px 0 10px; }
+    #privacy-modal .privacy-content h2:first-child {
+      margin-top: 0; }
+  #privacy-modal .privacy-content h4 {
+    color: #ffffff;
+    font-size: 18px;
+    margin: 24px 0 8px; }
+  #privacy-modal .privacy-content h5 {
+    color: #ffffff;
+    font-size: 15px;
+    margin: 16px 0 6px; }
+  #privacy-modal .privacy-content p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 8px; }
+  #privacy-modal .privacy-content ul {
+    font-size: 14px;
+    line-height: 1.6;
+    padding-left: 20px; }
+    #privacy-modal .privacy-content ul li {
+      margin-bottom: 4px; }
+  #privacy-modal .privacy-content strong {
+    color: #ffffff; }
+
+.footer-legal-link {
+  color: #9EA1A8;
+  text-decoration: underline; }
+  .footer-legal-link:hover {
+    color: #e5e5e5; }
+
 .locations-list {
   border-top: solid 1px #e5e5e5;
   border-bottom: solid 1px #e5e5e5; }

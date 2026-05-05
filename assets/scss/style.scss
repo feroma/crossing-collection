@@ -227,6 +227,86 @@ body.modal-open {
   }
 }
 
+#company-modal,
+#privacy-modal {
+  .modal-content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .modal-scroll {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+}
+
+#company-modal {
+  .modal-title {
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+  .company-details-list {
+    li {
+      padding: 8px 0;
+      font-size: 16px;
+      strong {
+        color: $white;
+      }
+      span {
+        color: $gray;
+      }
+    }
+  }
+}
+
+#privacy-modal {
+  .privacy-content {
+    color: $gray_light;
+    h2 {
+      color: $yellow;
+      font-size: 28px;
+      margin: 30px 0 10px;
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+    h4 {
+      color: $white;
+      font-size: 18px;
+      margin: 24px 0 8px;
+    }
+    h5 {
+      color: $white;
+      font-size: 15px;
+      margin: 16px 0 6px;
+    }
+    p {
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 8px;
+    }
+    ul {
+      font-size: 14px;
+      line-height: 1.6;
+      padding-left: 20px;
+      li {
+        margin-bottom: 4px;
+      }
+    }
+    strong {
+      color: $white;
+    }
+  }
+}
+
+.footer-legal-link {
+  color: $gray;
+  text-decoration: underline;
+  &:hover {
+    color: $gray_light;
+  }
+}
+
 .locations-list {
   border-top: solid 1px $gray_light;
   border-bottom: solid 1px $gray_light;
@@ -242,8 +322,8 @@ body.modal-open {
     padding: 30px 30px 15px 30px;
     flex: 1 1 100%;
     max-width: 100%;
-
     border-bottom: solid 1px $gray_light;
+
     @include media-breakpoint-up(md) {
       flex: 1 1 25%;
       max-width: 25%;
