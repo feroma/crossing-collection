@@ -171,7 +171,7 @@
               </a>
             </div>
 
-            <p class="text-gray">All rights reserved. &copy; 2025 {{ siteConfig.siteName }}.</p>
+            <p class="text-gray">All rights reserved. &copy; 2026 {{ siteConfig.siteName }}. Company</p>
           </div>
           <div class="col-sm-6 pt-sm-3"></div>
           <div class="col-sm-6 pt-sm-3"></div>
