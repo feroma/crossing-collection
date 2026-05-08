@@ -14,15 +14,17 @@ export const state = () => ({
     },
     contact: {
       email: 'info@crossingcollection.com',
-      phone: '+39 123 456 7890',
-      address: 'Via Roma, 123 - 00100 Roma (RM)'
+      phone: '+39 02 86891160',
     },
     social: {
-      instagram: '',
+      instagram: 'https://www.instagram.com/crossing_collection/',
       facebook: '',
       twitter: '',
       linkedin: ''
-    }
+    },
+    company:'<strong>Luxury House S.r.l.</strong><br>\n' +
+      'Via Villalba 2 – 95024 Acireale (CT)<br>\n' +
+      'CF/PIVA: 04512230873<br>Registro d\'impresa Sud Est Sicilia<br>REA – 301284'
   },
 
   // Stato dell'interfaccia utente
@@ -776,12 +778,12 @@ export const state = () => ({
             icon: 'https://www.stage72.info/crossing-collection/repo/icon_06.png',
             description: 'Carlotta, a lawyer who always felt her calling lay more in contemporary art and interior design, has an eye for iconic pieces that elevate any space. Crossing Condotti in Rome was her first serious foray into architecture and interior design. With that she found her way to her passion, and has never looked back! From lighting to bespoke furniture and artisanal carpentry, she brings a sophisticated, modern touch to each of their properties. Through a carefully curated mix of colours and textures, she creates environments that exude class, style, and an unexpected elegance, making each space both timeless and inviting.'
           },
-          {
-            name: 'Francesca',
-            role: 'Brand Specialist, Crossing Collection, Milan',
-            icon: 'https://www.stage72.info/crossing-collection/repo/icon_02.png',
-            description: 'Francesca is our multi-talented Brand Specialist in the corporate office in Milan. Her brilliant organisation skills allow her to execute all manner of tasks including office management, occasional back-up concierge support, hiring, and marketing. Francesca loves a challenge and has plenty come her way while keeping things running smoothly behind the scenes. She has been with us for going on ten years and has always proven herself to be a key support staff member for our leadership team to count on.'
-          },
+          // {
+          //   name: 'Francesca',
+          //   role: 'Brand Specialist, Crossing Collection, Milan',
+          //   icon: 'https://www.stage72.info/crossing-collection/repo/icon_02.png',
+          //   description: 'Francesca is our multi-talented Brand Specialist in the corporate office in Milan. Her brilliant organisation skills allow her to execute all manner of tasks including office management, occasional back-up concierge support, hiring, and marketing. Francesca loves a challenge and has plenty come her way while keeping things running smoothly behind the scenes. She has been with us for going on ten years and has always proven herself to be a key support staff member for our leadership team to count on.'
+          // },
           {
             name: 'Gérald',
             icon: 'https://www.stage72.info/crossing-collection/repo/icon_01.png',

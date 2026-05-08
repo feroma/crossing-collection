@@ -1,56 +1,19 @@
 let development = process.env.NODE_ENV !== 'production'
-let base = development ? '/' : '/crossing-collection/'
+let base = development ? '/' : '/'
 
 export default {
+  server: {
+    host: '0.0.0.0'
+  },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'Crossing Collection - Luxury Hotels, Villas & Yacht Experiences in Italy',
     htmlAttrs: {
       lang: 'en'
     },
-    // Consent Mode + GTM inline — renderizzati nel sorgente HTML dal server
-    script: [
-      {
-        hid: 'gtm-consent',
-        innerHTML: `
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('consent', 'default', {
-            'ad_storage': 'denied',
-            'ad_user_data': 'denied',
-            'ad_personalization': 'denied',
-            'analytics_storage': 'denied',
-            'security_storage': 'granted',
-            'functionality_storage': 'granted'
-          });
-        `,
-        type: 'text/javascript'
-      },
-      {
-        hid: 'gtm-script',
-        innerHTML: `
-          (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;
-          j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
-          f.parentNode.insertBefore(j,f);
-          })(window,document,'script','dataLayer','GTM-KX2SNRQN');
-        `,
-        type: 'text/javascript'
-      }
-    ],
-    noscript: [
-      {
-        hid: 'gtm-noscript',
-        innerHTML: '<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KX2SNRQN" height="0" width="0" style="display:none;visibility:hidden"></iframe>',
-        body: true
-      }
-    ],
-    // Necessario per evitare che vue-meta faccia escape dell'innerHTML
-    __dangerouslyDisableSanitizers: ['script', 'noscript'],
     meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      {charset: 'utf-8'},
+      {name: 'viewport', content: 'width=device-width, initial-scale=1'},
       {
         hid: 'description',
         name: 'description',
@@ -61,50 +24,50 @@ export default {
         name: 'keywords',
         content: 'luxury hotels Italy, boutique hotels Milan Rome, Sicily villa rental, Mediterranean yacht charter, Italian hospitality, luxury travel Italy, Crossing Manzoni, Crossing Condotti, Crossing The Rock, Crossing The Sea'
       },
-      { name: 'author', content: 'Crossing Collection' },
-      { name: 'robots', content: 'index, follow' },
-      { name: 'format-detection', content: 'telephone=no' },
+      {name: 'author', content: 'Crossing Collection'},
+      {name: 'robots', content: 'index, follow'},
+      {name: 'format-detection', content: 'telephone=no'},
 
       // Open Graph
-      { hid: 'og:type', property: 'og:type', content: 'website' },
-      { hid: 'og:title', property: 'og:title', content: 'Crossing Collection - Luxury Hotels, Villas & Yacht Experiences in Italy' },
-      { hid: 'og:description', property: 'og:description', content: 'Discover Crossing Collection: exclusive boutique hotels in Milan and Rome, luxury villa in Sicily, and premium yacht experiences in the Mediterranean.' },
-      { hid: 'og:image', property: 'og:image', content: 'https://www.stage72.info/crossing-collection/repo/crossing_collection.jpg' },
-      { hid: 'og:image:width', property: 'og:image:width', content: '1200' },
-      { hid: 'og:image:height', property: 'og:image:height', content: '630' },
-      { hid: 'og:image:alt', property: 'og:image:alt', content: 'Crossing Collection luxury accommodations across Italy' },
-      { hid: 'og:url', property: 'og:url', content: 'https://www.crossingcollection.com' },
-      { hid: 'og:site_name', property: 'og:site_name', content: 'Crossing Collection' },
-      { hid: 'og:locale', property: 'og:locale', content: 'en_US' },
-      { hid: 'og:locale:alternate', property: 'og:locale:alternate', content: 'it_IT' },
+      {hid: 'og:type', property: 'og:type', content: 'website'},
+      {hid: 'og:title', property: 'og:title', content: 'Crossing Collection - Luxury Hotels, Villas & Yacht Experiences in Italy'},
+      {hid: 'og:description', property: 'og:description', content: 'Discover Crossing Collection: exclusive boutique hotels in Milan and Rome, luxury villa in Sicily, and premium yacht experiences in the Mediterranean.'},
+      {hid: 'og:image', property: 'og:image', content: 'https://www.stage72.info/crossing-collection/repo/crossing_collection.jpg'},
+      {hid: 'og:image:width', property: 'og:image:width', content: '1200'},
+      {hid: 'og:image:height', property: 'og:image:height', content: '630'},
+      {hid: 'og:image:alt', property: 'og:image:alt', content: 'Crossing Collection luxury accommodations across Italy'},
+      {hid: 'og:url', property: 'og:url', content: 'https://www.crossingcollection.com'},
+      {hid: 'og:site_name', property: 'og:site_name', content: 'Crossing Collection'},
+      {hid: 'og:locale', property: 'og:locale', content: 'en_US'},
+      {hid: 'og:locale:alternate', property: 'og:locale:alternate', content: 'it_IT'},
 
       // Twitter Card
-      { hid: 'twitter:card', name: 'twitter:card', content: 'summary_large_image' },
-      { hid: 'twitter:title', name: 'twitter:title', content: 'Crossing Collection - Luxury Hotels, Villas & Yacht Experiences in Italy' },
-      { hid: 'twitter:description', name: 'twitter:description', content: 'Discover Crossing Collection: exclusive boutique hotels in Milan and Rome, luxury villa in Sicily, and premium yacht experiences in the Mediterranean.' },
-      { hid: 'twitter:image', name: 'twitter:image', content: 'https://www.stage72.info/crossing-collection/repo/crossing_collection.jpg' },
-      { hid: 'twitter:image:alt', name: 'twitter:image:alt', content: 'Crossing Collection luxury accommodations across Italy' },
+      {hid: 'twitter:card', name: 'twitter:card', content: 'summary_large_image'},
+      {hid: 'twitter:title', name: 'twitter:title', content: 'Crossing Collection - Luxury Hotels, Villas & Yacht Experiences in Italy'},
+      {hid: 'twitter:description', name: 'twitter:description', content: 'Discover Crossing Collection: exclusive boutique hotels in Milan and Rome, luxury villa in Sicily, and premium yacht experiences in the Mediterranean.'},
+      {hid: 'twitter:image', name: 'twitter:image', content: 'https://www.stage72.info/crossing-collection/repo/crossing_collection.jpg'},
+      {hid: 'twitter:image:alt', name: 'twitter:image:alt', content: 'Crossing Collection luxury accommodations across Italy'},
 
       // Additional SEO
-      { name: 'theme-color', content: '#2c3e50' },
-      { name: 'msapplication-TileColor', content: '#2c3e50' },
-      { name: 'application-name', content: 'Crossing Collection' },
-      { name: 'apple-mobile-web-app-title', content: 'Crossing Collection' },
-      { name: 'apple-mobile-web-app-capable', content: 'yes' },
-      { name: 'apple-mobile-web-app-status-bar-style', content: 'black-translucent' },
+      {name: 'theme-color', content: '#2c3e50'},
+      {name: 'msapplication-TileColor', content: '#2c3e50'},
+      {name: 'application-name', content: 'Crossing Collection'},
+      {name: 'apple-mobile-web-app-title', content: 'Crossing Collection'},
+      {name: 'apple-mobile-web-app-capable', content: 'yes'},
+      {name: 'apple-mobile-web-app-status-bar-style', content: 'black-translucent'},
 
       // Geo tags
-      { name: 'geo.region', content: 'IT' },
-      { name: 'geo.placename', content: 'Italy' },
-      { name: 'ICBM', content: '41.9028, 12.4964' }, // Rome coordinates
+      {name: 'geo.region', content: 'IT'},
+      {name: 'geo.placename', content: 'Italy'},
+      {name: 'ICBM', content: '41.9028, 12.4964'}, // Rome coordinates
 
       // Business/Schema hints
-      { name: 'business:contact_data:country_name', content: 'Italy' }
+      {name: 'business:contact_data:country_name', content: 'Italy'}
     ],
     link: [
-      { rel: 'canonical', href: 'https://www.crossingcollection.com' },
-      { rel: 'alternate', hreflang: 'en', href: 'https://www.crossingcollection.com' },
-      { rel: 'alternate', hreflang: 'x-default', href: 'https://www.crossingcollection.com' },
+      {rel: 'canonical', href: 'https://www.crossingcollection.com'},
+      {rel: 'alternate', hreflang: 'en', href: 'https://www.crossingcollection.com'},
+      {rel: 'alternate', hreflang: 'x-default', href: 'https://www.crossingcollection.com'},
       {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'},
       {rel: "apple-touch-icon", sizes: "57x57", href: base + "img/favicon/apple-icon-57x57.png"},
       {rel: "apple-touch-icon", sizes: "60x60", href: base + "img/favicon/apple-icon-60x60.png"},
@@ -119,7 +82,24 @@ export default {
       {rel: "icon", type: "image/png", sizes: "32x32", href: base + "img/favicon/favicon-32x32.png"},
       {rel: "icon", type: "image/png", sizes: "96x96", href: base + "img/favicon/favicon-96x96.png"},
       {rel: "icon", type: "image/png", sizes: "16x16", href: base + "img/favicon/favicon-16x16.png"}
-    ]
+    ],
+   script: [
+      {
+        hid: 'gtm-script',
+        innerHTML: `
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KX2SNRQN');
+        `,
+        type: 'text/javascript',
+        charset: 'utf-8'
+      }
+    ],
+    __dangerouslyDisableSanitizersByTagID: {
+      'gtm-script': ['innerHTML']
+    }
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -128,10 +108,15 @@ export default {
     'swiper/css/swiper.css'
   ],
 
-
+  server: {
+    host: '0.0.0.0'
+  },
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-   {src: '~/plugins/swiper.js', mode: 'client'}
+    {src: '~/plugins/swiper.js', mode: 'client'}
+    //{src: '~/plugins/gtm.client.js', mode: 'client'},
+    //{src: '~/plugins/gtm-consent.client.js', mode: 'client'}
+	  
     //{src: '~/plugins/swiper-client.js'}
   ],
 
