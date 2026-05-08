@@ -227,35 +227,71 @@ body.modal-open {
   }
 }
 
-#company-modal {
-  .modal-content {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
-  .modal-scroll {
-    max-width: 700px;
-    margin: 0 auto;
+.company-modal-backdrop {
+  position: fixed;
+  z-index: 1100;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.company-modal-dialog {
+  position: relative;
+  background-color: $gray_darker;
+  //border: 1px solid $gray;
+  border-radius: 16px;
+  padding: 30px 35px;
+  max-width: 440px;
+  width: 100%;
+  color: $gray_light;
+}
+
+.company-modal-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: none;
+  border: none;
+  color: $gray;
+  cursor: pointer;
+  padding: 4px;
+  line-height: 1;
+  transition: color 0.2s;
+
+  &:hover {
+    color: $white;
   }
 }
 
-#company-modal {
-  .modal-title {
-    font-size: 30px;
-    margin-bottom: 20px;
+.company-modal-title {
+  @extend .serif;
+  color: $yellow;
+  font-size: 22px;
+  margin-bottom: 16px;
+}
+
+.company-modal-body {
+  font-size: 14px;
+  line-height: 1.7;
+  color: $gray_light;
+  strong {
+    color: $white;
   }
-  .company-details-list {
-    li {
-      padding: 8px 0;
-      font-size: 16px;
-      strong {
-        color: $white;
-      }
-      span {
-        color: $gray;
-      }
-    }
-  }
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.25s ease;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
 }
 
 .privacy-page {
@@ -316,6 +352,41 @@ body.modal-open {
   }
   strong {
     color: $white;
+  }
+}
+
+.socials-contacts {
+  padding: 16px 0;
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 8px 20px;
+  }
+
+  li a {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: $gray;
+    text-decoration: none;
+    font-size: 13px;
+    transition: color 0.2s;
+
+    &:hover {
+      color: $white;
+    }
+
+    .icon {
+      flex-shrink: 0;
+      svg {
+        width: 32px;
+        height: 32px;
+      }
+    }
   }
 }
 
@@ -1074,3 +1145,4 @@ img {
   }
 
 }
+

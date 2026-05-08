@@ -173,7 +173,20 @@
 
               </a>
             </div>
-
+            <div class="socials-contacts">
+              <ul v-if="footerLinks.length">
+                <li v-for="item in footerLinks" :key="item.key">
+                  <a
+                    :href="item.href"
+                    :target="item.external ? '_blank' : undefined"
+                    :rel="item.external ? 'noopener noreferrer' : undefined"
+                  >
+                    <component :is="item.icon" fill="currentColor"/>
+                    <span class="p tbase">{{ item.label }}</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
             <p class="text-gray">All rights reserved. &copy; 2026 {{ siteConfig.siteName }}. <a href="#" class="footer-legal-link" @click.prevent="openCompanyModal">Company Details</a> · <nuxt-link to="/privacy" class="footer-legal-link">Privacy</nuxt-link></p>
           </div>
           <div class="col-sm-6 pt-sm-3"></div>
@@ -235,11 +248,33 @@ export default {
       'getSectionById',
       'isLocationsModalOpen',
       'isModalOpen',
-      'isCompanyModalOpen',
+      'contactInfo',
+      'socialLinks',
       'allLocationsList'
     ]),
     isAnyModalOpen() {
-      return this.isLocationsModalOpen || this.isModalOpen || this.isCompanyModalOpen
+      return this.isLocationsModalOpen || this.isModalOpen
+    },
+    footerLinks() {
+      const items = []
+      if (this.contactInfo) {
+        Object.entries(this.contactInfo).forEach(([key, value]) => {
+          if (value) {
+            let href = value
+            if (key === 'Email') href = 'mailto:' + value
+            else if (key === 'Phone') href = 'tel:' + value
+            items.push({ key, label: value, href, icon: 'icons-' + key.toLowerCase() })
+          }
+        })
+      }
+      if (this.socialLinks) {
+        Object.entries(this.socialLinks).forEach(([key, value]) => {
+          if (value) {
+            items.push({ key, label: key, href: value, icon: 'icons-' + key.toLowerCase(), external: true })
+          }
+        })
+      }
+      return items
     }
   },
 
@@ -250,14 +285,11 @@ export default {
       'openModal',
       'toggleModal',
       'closeModal',
-      'openCompanyModal',
-      'closeCompanyModal'
+      'openCompanyModal'
     ]),
     menuIconAction() {
       if(this.isModalOpen){
         this.closeModal()
-      }else if(this.isCompanyModalOpen){
-        this.closeCompanyModal()
       }else{
         this.toggleLocationsModal()
       }

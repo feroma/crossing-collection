@@ -13,14 +13,14 @@ export const state = () => ({
       textColor: '#1f2937'
     },
     contact: {
-      email: 'info@crossingcollection.com',
-      phone: '+39 02 86891160',
+      Email: 'info@crossingcollection.com',
+      Phone: '+39 02 86891160',
     },
     social: {
-      instagram: 'https://www.instagram.com/crossing_collection/',
-      facebook: '',
-      twitter: '',
-      linkedin: ''
+      Instagram: 'https://www.instagram.com/crossing_collection/',
+      Facebook: '',
+      Twitter: '',
+      Linkedin: ''
     },
     company:'<strong>Luxury House S.r.l.</strong><br>\n' +
       'Via Villalba 2 – 95024 Acireale (CT)<br>\n' +

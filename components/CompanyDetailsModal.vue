@@ -1,16 +1,17 @@
 <template>
-  <div v-if="isCompanyModalOpen" class="modal-overlay" id="company-modal" @click="closeCompanyModal">
-    <div class="modal-content" @click.stop>
-      <div class="modal-scroll company-details-content p-4 p-sm-5">
-        <h3 class="modal-title">Company Details</h3>
-        <ul class="list-unstyled company-details-list">
-          <li><strong>Crossing Condotti:</strong> <span>CIN IT058091B4TGH49IP7</span></li>
-          <li><strong>Crossing Corso:</strong> <span>CIN IT058091C2X4WJ8ECY</span></li>
-          <li><strong>Casa Crossing:</strong> <span>CIN IT058091B4MWC5CQSF</span></li>
-        </ul>
+  <transition name="fade">
+    <div v-if="isCompanyModalOpen" class="company-modal-backdrop" @click="closeCompanyModal">
+      <div class="company-modal-dialog" @click.stop>
+        <button class="company-modal-close" @click="closeCompanyModal" aria-label="Close">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15 5L5 15M5 5L15 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </button>
+        <h3 class="company-modal-title">Company Details</h3>
+        <div class="company-modal-body tbase" v-html="siteConfig.company"></div>
       </div>
     </div>
-  </div>
+  </transition>
 </template>
 
 <script>
@@ -20,25 +21,25 @@ export default {
   name: 'CompanyDetailsModal',
   computed: {
     ...mapGetters([
-      'isCompanyModalOpen'
+      'isCompanyModalOpen',
+      'siteConfig'
     ])
   },
   methods: {
     ...mapActions([
       'closeCompanyModal'
-    ])
-  },
-  watch: {
-    isCompanyModalOpen(newVal) {
-      if (newVal) {
-        document.body.classList.add('modal-open')
-      } else {
-        document.body.classList.remove('modal-open')
+    ]),
+    onKeydown(e) {
+      if (e.key === 'Escape' && this.isCompanyModalOpen) {
+        this.closeCompanyModal()
       }
     }
   },
+  mounted() {
+    document.addEventListener('keydown', this.onKeydown)
+  },
   beforeDestroy() {
-    document.body.classList.remove('modal-open')
+    document.removeEventListener('keydown', this.onKeydown)
   }
 }
 </script>

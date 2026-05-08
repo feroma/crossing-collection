@@ -5306,7 +5306,7 @@ h1, h2 {
   font-family: "cc-serif", serif;
   font-weight: 300; }
 
-.serif, .footer-nav a {
+.serif, .company-modal-title, .footer-nav a {
   font-family: "cc-serif", serif !important;
   font-weight: 300; }
 
@@ -5467,24 +5467,61 @@ body.modal-open {
   width: 100%;
   height: auto; }
 
-#company-modal .modal-content {
-  width: 100%;
+.company-modal-backdrop {
+  position: fixed;
+  z-index: 1100;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
   display: flex;
-  justify-content: center; }
-#company-modal .modal-scroll {
-  max-width: 700px;
-  margin: 0 auto; }
+  align-items: center;
+  justify-content: center;
+  padding: 20px; }
 
-#company-modal .modal-title {
-  font-size: 30px;
-  margin-bottom: 20px; }
-#company-modal .company-details-list li {
-  padding: 8px 0;
-  font-size: 16px; }
-  #company-modal .company-details-list li strong {
+.company-modal-dialog {
+  position: relative;
+  background-color: #24252A;
+  border-radius: 16px;
+  padding: 30px 35px;
+  max-width: 440px;
+  width: 100%;
+  color: #e5e5e5; }
+
+.company-modal-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: none;
+  border: none;
+  color: #9EA1A8;
+  cursor: pointer;
+  padding: 4px;
+  line-height: 1;
+  transition: color 0.2s; }
+  .company-modal-close:hover {
     color: #ffffff; }
-  #company-modal .company-details-list li span {
-    color: #9EA1A8; }
+
+.company-modal-title {
+  color: #F8F4EE;
+  font-size: 22px;
+  margin-bottom: 16px; }
+
+.company-modal-body {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #e5e5e5; }
+  .company-modal-body strong {
+    color: #ffffff; }
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.25s ease; }
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0; }
 
 .privacy-page {
   min-height: 100vh; }
@@ -5529,6 +5566,31 @@ body.modal-open {
       margin-bottom: 4px; }
   .privacy-content strong {
     color: #ffffff; }
+
+.socials-contacts {
+  padding: 16px 0; }
+  .socials-contacts ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 8px 20px; }
+  .socials-contacts li a {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #9EA1A8;
+    text-decoration: none;
+    font-size: 13px;
+    transition: color 0.2s; }
+    .socials-contacts li a:hover {
+      color: #ffffff; }
+    .socials-contacts li a .icon {
+      flex-shrink: 0; }
+      .socials-contacts li a .icon svg {
+        width: 32px;
+        height: 32px; }
 
 .footer-legal-link {
   color: #9EA1A8;
